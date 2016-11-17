@@ -1,0 +1,633 @@
+
+
+/* Start:/bitrix/templates/books/components/bitrix/menu/horizontal_multilevel/style.css?14791282694598*/
+/**Top menu**/
+#horizontal-multilevel-menu,#horizontal-multilevel-menu ul
+{
+	margin:0; padding:0;
+	background:#BC262C url(/bitrix/templates/books/components/bitrix/menu/horizontal_multilevel/images/header_menu_bg.gif) repeat-x;
+	min-height:27px;
+	width:100%;
+	list-style:none;
+	font-size:11px;
+	float:left;
+	/*font-size:90%*/
+}
+
+#horizontal-multilevel-menu
+{
+	
+}
+
+/*Links*/
+#horizontal-multilevel-menu a
+{
+	display:block;
+	padding:5px 10px;
+	/*padding:0.3em 0.8em;*/
+	text-decoration:none;
+	text-align:center;
+}
+
+#horizontal-multilevel-menu li 
+{
+	float:left;
+}
+
+/*Root items*/
+#horizontal-multilevel-menu li a.root-item
+{
+	color:#fff;
+	font-weight:bold;
+	padding:7px 12px;
+}
+
+/*Root menu selected*/
+#horizontal-multilevel-menu li a.root-item-selected
+{
+	background:#fc8d3d;
+	color:#fff;
+	font-weight:bold;
+	padding:7px 12px;
+}
+
+/*Root items: hover*/
+#horizontal-multilevel-menu li:hover a.root-item, #horizontal-multilevel-menu li.jshover a.root-item
+{
+	background:#e26336;
+	color:#fff;
+}
+
+/*Item-parents*/
+#horizontal-multilevel-menu a.parent
+{
+	background: url(/bitrix/templates/books/components/bitrix/menu/horizontal_multilevel/images/arrow.gif) center right no-repeat;
+}
+
+/*Denied items*/
+#horizontal-multilevel-menu a.denied
+{
+	background: url(/bitrix/templates/books/components/bitrix/menu/horizontal_multilevel/images/lock.gif) center right no-repeat;
+}
+
+/*Child-items: hover*/
+#horizontal-multilevel-menu li:hover, #horizontal-multilevel-menu li.jshover
+{
+	background:#D6D6D6;
+	color:#fff;
+}
+
+/*Child-items selected*/
+#horizontal-multilevel-menu li.item-selected
+{
+	background:#D6D6D6;
+	color:#fff;
+}
+
+/*Sub-menu box*/
+#horizontal-multilevel-menu li ul
+{
+	position:absolute;
+	/*top:-999em;*/
+	top:auto;
+	display:none;
+	z-index:500;
+
+	height:auto;
+	/*width:12em;*/
+	width:135px;
+	background:#F5F5F5;
+	border:1px solid #C1C1C1;
+}
+
+/*Sub-menu item box*/
+#horizontal-multilevel-menu li li 
+{
+	width:100%;
+	border-bottom:1px solid #DEDEDE;
+}
+
+/*Item link*/
+#horizontal-multilevel-menu li ul a
+{
+	text-align:left;
+}
+
+/*Items text color & size */
+#horizontal-multilevel-menu li a,
+#horizontal-multilevel-menu li:hover li a,
+#horizontal-multilevel-menu li.jshover li a,
+#horizontal-multilevel-menu li:hover li:hover li a,
+#horizontal-multilevel-menu li.jshover li.jshover li a,
+#horizontal-multilevel-menu li:hover li:hover li:hover li a,
+#horizontal-multilevel-menu li.jshover li.jshover li.jshover li a,
+#horizontal-multilevel-menu li:hover li:hover li:hover li:hover li a,
+#horizontal-multilevel-menu li.jshover li.jshover li.jshover li.jshover li a,
+#horizontal-multilevel-menu li:hover li:hover li:hover li:hover li:hover li a,
+#horizontal-multilevel-menu li.jshover li.jshover li.jshover li.jshover li.jshover li a
+{
+	color:#4F4F4F;
+	font-weight:bold;
+}
+
+/*Items text color & size: hover*/
+#horizontal-multilevel-menu li:hover li:hover a,
+#horizontal-multilevel-menu li.jshover li.jshover a,
+#horizontal-multilevel-menu li:hover li:hover li:hover a,
+#horizontal-multilevel-menu li.jshover li.jshover li.jshover a,
+#horizontal-multilevel-menu li:hover li:hover li:hover li:hover a,
+#horizontal-multilevel-menu li.jshover li.jshover li.jshover li.jshover a
+#horizontal-multilevel-menu li:hover li:hover li:hover li:hover li:hover a,
+#horizontal-multilevel-menu li.jshover li.jshover li.jshover li.jshover li.jshover a
+#horizontal-multilevel-menu li:hover li:hover li:hover li:hover li:hover li:hover a,
+#horizontal-multilevel-menu li.jshover li.jshover li.jshover li.jshover li.jshover li.jshover a
+{
+	color:#4F4F4F;
+}
+
+#horizontal-multilevel-menu li ul ul
+{
+	margin:-27px 0 0 132px;
+	/*margin:-1.93em 0 0 11.6em;*/
+}
+
+#horizontal-multilevel-menu li:hover ul ul,
+#horizontal-multilevel-menu li.jshover ul ul,
+#horizontal-multilevel-menu li:hover ul ul ul,
+#horizontal-multilevel-menu li.jshover ul ul ul,
+#horizontal-multilevel-menu li:hover ul ul ul ul,
+#horizontal-multilevel-menu li.jshover ul ul ul ul,
+#horizontal-multilevel-menu li:hover ul ul ul ul ul,
+#horizontal-multilevel-menu li.jshover ul ul ul ul ul
+{
+	/*top:-999em;*/
+	display:none;
+}
+
+#horizontal-multilevel-menu li:hover ul,
+#horizontal-multilevel-menu li.jshover ul,
+#horizontal-multilevel-menu li li:hover ul,
+#horizontal-multilevel-menu li li.jshover ul,
+#horizontal-multilevel-menu li li li:hover ul,
+#horizontal-multilevel-menu li li li.jshover ul,
+#horizontal-multilevel-menu li li li li:hover ul,
+#horizontal-multilevel-menu li li li li.jshover ul,
+#horizontal-multilevel-menu li li li li li:hover ul,
+#horizontal-multilevel-menu li li li li li.jshover ul
+{
+	/*z-index:1000;
+	top:auto;*/
+	display:block;
+}
+
+div.menu-clear-left
+{
+	clear:left;
+}
+/* End */
+
+
+/* Start:/bitrix/components/bitrix/menu/templates/.default/style.min.css?1479122441490*/
+ul.left-menu{list-style:none;margin:0;padding:0;margin-bottom:8px;position:relative}ul.left-menu li{padding:10px 16px;background:#f5f5f5 url(/bitrix/components/bitrix/menu/templates/.default/images/left_menu_bg.gif) top repeat-x}ul.left-menu li a{font-size:100%;color:#bc262c;font-weight:bold;text-decoration:none}ul.left-menu li a:visited{color:#bc262c}ul.left-menu li a:hover{color:#bc262c}ul.left-menu li a.selected:link,ul.left-menu li a.selected:visited,ul.left-menu li a.selected:active,ul.left-menu li a.selected:hover{color:#fc8d3d}
+/* End */
+
+
+/* Start:/bitrix/components/bitrix/system.auth.form/templates/.default/style.min.css?1479122443424*/
+div.bx-system-auth-form span.bx-auth-secure{background-color:#fffae3;border:1px solid #dedbc8;padding:2px;display:inline-block;vertical-align:bottom;margin-top:-1px}div.bx-system-auth-form div.bx-auth-secure-icon{background-image:url(/bitrix/components/bitrix/system.auth.form/templates/.default/images/sec.png);background-repeat:no-repeat;background-position:center;width:19px;height:18px}div.bx-system-auth-form div.bx-auth-secure-unlock{background-image:url(/bitrix/components/bitrix/system.auth.form/templates/.default/images/sec-unlocked.png)}
+/* End */
+
+
+/* Start:/bitrix/components/bitrix/breadcrumb/templates/.default/style.min.css?1479122434448*/
+.bx-breadcrumb{margin:10px 0}.bx-breadcrumb i{color:#b5bdc2;line-height:13px;font-size:12px;vertical-align:middle;margin-right:5px}.bx-breadcrumb .bx-breadcrumb-item{float:left;margin-bottom:10px;white-space:nowrap;line-height:13px;vertical-align:middle;margin-right:10px}.bx-breadcrumb .bx-breadcrumb-item span{font-family:"Open Sans",Arial,"Helvetica Neue",Helvetica,sans-serif;font-size:13px}.bx-breadcrumb .bx-breadcrumb-item a{border-bottom:0}
+/* End */
+
+
+/* Start:/bitrix/components/bitrix/voting.form/templates/main_page/style.css?1479122944397*/
+.voting-form-box
+{
+	font-size:100%;
+}
+
+.voting-form-box .active
+{
+	color:green;
+}
+
+.voting-form-box .disable
+{
+	color:red;
+}
+
+.voting-form-box label
+{
+	line-height:20px;
+}
+
+.voting-form-box form
+{
+	margin:0;
+}
+
+.starrequired 
+{
+    color:red;
+}
+.vote-reply-field-captcha-label {
+    margin-bottom:6px;}
+.vote-vote-footer {
+    margin-top:6px;}
+.vote-reply-field-captcha-image {
+    margin:6px 0;}
+
+/* End */
+
+
+/* Start:/bitrix/templates/books/styles.css?14791282641228*/
+
+h1
+{
+	margin:0; padding:0;
+	font-size:120%;
+	margin-bottom:15px;
+	padding-bottom:5px;
+	padding-top:14px;
+	border-bottom:1px solid #CCCCCC
+}
+
+h2, h3
+{
+	font-size:120%;
+}
+
+h2
+{
+	padding-top:15px;
+	padding-bottom:5px;
+	border-bottom:1px solid #CCCCCC;
+}
+
+h4, h5, h6
+{
+	font-size:110%;
+}
+
+/*Information block*/
+.information-block
+{
+	width:180px;
+	margin-bottom:16px;
+}
+
+.information-block-head
+{
+	color:#BC262C;
+	font-weight:bold;
+	font-size:85%;
+	border-bottom:1px solid #CCCCCC;
+	margin-bottom:4px;
+	padding-bottom:5px;
+}
+
+.information-block-body
+{
+	font-size:85%;
+	color:#737373;
+	margin-right:20px;
+}
+
+/*Content block*/
+.content-block
+{
+	border-top-color:#E4E4E4;
+	background:#F5F5F5;
+	margin-bottom:5px;
+	width:100%;
+}
+
+.content-block-head
+{
+	background-image:url(/bitrix/templates/books/images/content_block_bg.gif);
+	font-weight:bold;
+	font-size:95%;
+	margin:2px;
+	padding: 5px 9px;
+}
+
+.content-block-body
+{
+	padding:4px 5px;
+	width:100%;
+}
+
+code
+{
+	font-size:100%;
+	font-weight:normal;
+	display:block;
+	padding:1.5em 1em 1em 1em;
+	border-style:solid;
+	border-width:1px;
+	border-width:1px 0;
+	margin:1em 0;
+	background-color:#F5F5F5;
+	font-family:sans-serif;
+}
+/* End */
+
+
+/* Start:/bitrix/templates/books/template_styles.css?14791282693801*/
+html, body, form
+{
+	margin: 0;
+	padding: 0;
+}
+
+html
+{
+	height:100%;
+}
+
+body
+{
+	height:auto !important;
+	height:100%;
+	min-height:100%;
+	min-width:760px;
+}
+
+/*Font*/
+body
+{
+	font-size: 80%;
+	font-family: Tahoma, Verdana, Helvetica, sans-serif;
+	color: #333;
+	background-color: #fff;
+}
+
+/*Font in table*/
+table
+{
+	font-size:100%;
+}
+
+/*Links*/
+a:link {color: #486DAA;}
+a:visited{color:#8C9AA8;}
+a:active {color: #486DAA;}
+a:hover{color:#DD0000;}
+
+
+small
+{
+	font-size:85%;
+}
+
+hr
+{
+	width:100%;
+	height: 1px;
+	border: medium none;
+	color: #d1d0d0;
+	background-color: #d1d0d0;
+	margin:8px 0
+}
+
+#header
+{
+	position:relative; /*containing block*/
+	height:106px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	background: #2F4773 url(/bitrix/templates/books/images/header_bg.gif) repeat-x;
+	border-bottom:1px solid #D6D6D6;
+}
+
+#header_logo
+{
+	position:absolute;
+}
+
+#company_logo
+{
+	display:block;
+	position:absolute;
+	width:100px; 
+	height:106px; 
+	left:165px;
+	top: 0;
+	background:url(/bitrix/templates/books/images/logo.gif) right center no-repeat;
+}
+
+#header_text
+{
+	position:absolute;
+	left:265px;
+	top: 0;
+	width:330px;
+	padding-left:5px;
+	padding-top:35px;
+	color:#fff;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+#header_text .bx-main-title
+{
+	margin:0;
+	padding:0;
+	font-size:160%;
+	border:none;
+	text-decoration:none;
+}
+
+#header_text span.bx-main-subtitle
+{
+	font-size:80%;
+}
+
+/* Header menu: home, search, feedback*/
+#header_menu
+{
+
+	background:#4B6185;
+	position:absolute;
+	right:55px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+#header_sites
+{
+	position:absolute;
+	right:55px;
+	top: 60px;
+	color:#fff;
+	text-align:right;
+}
+
+#header_sites a, #header_sites span
+{
+	color:#fff;
+	text-decoration:none;
+}
+
+#header_sites span
+{
+	color: #9dabc0;
+}
+
+#header_menu a
+{
+	display:block;
+	float:left;
+	cursor:pointer; cursor: hand;
+	padding:8px 11px;
+}
+
+#zebra
+{
+	height:20px;
+	background:transparent url(/bitrix/templates/books/images/zebra_bg.gif) left top repeat-x;
+}
+
+#navigation
+{
+
+}
+
+/*Navigation*/
+#navigation a
+{
+	font-size:95%;
+	text-decoration:none;
+	color:#535353;
+}
+
+/*Content table*/
+#content
+{
+	width:100%;
+	height:70%;
+	border-collapse:collapse;
+}
+
+/*Left column*/
+#content .left-column
+{
+	width:180px;
+	vertical-align:top;
+	height:100%;
+}
+
+/*Main column*/
+#content .main-column
+{
+	vertical-align:top;
+	padding:0 23px 10px 23px;
+}
+
+/*Right column*/
+#content .right-column
+{
+	width:1px;
+	vertical-align:top;
+}
+
+/*Bottom banner*/
+#bottom_banner
+{
+	padding:5px;
+	text-align:center;
+}
+
+/*Footer*/
+#footer
+{
+	background: #4D6990;
+	text-align:right;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	height:40px;
+	padding:8px;
+	
+}
+
+/*Link in footer*/
+#footer a
+{
+	color: #CFD6E1;
+	font-size: 100%;
+}
+
+/*Data table*/
+table.data-table
+{
+	border:1px solid #99BAD7;
+	border-collapse:collapse;
+}
+
+/*Any cell*/
+table.data-table td
+{
+	border:1px solid #99BAD7;
+	background-color:#FFFFFF;
+	color:#333;
+	padding:3px 5px;
+}
+
+/*Head cell*/
+table.data-table thead td, table.data-table th
+{
+	background-color:#F1F5FA;
+	text-align:left;
+	font-weight:normal;
+	background-image:none;
+	border:1px solid #99BAD7;
+	padding:4px;
+	color:#333;
+}
+
+/*Body cell*/
+table.data-table tbody td
+{
+	background-color:#FFF;
+	background-image:none;
+	color:#333;
+}
+
+/*Foot cell*/
+table.data-table tfoot td
+{
+	background-color:#F1F5FA;
+	padding:4px;
+	color:#333;
+}
+
+/*Error & OK messages*/
+.errortext
+{
+	color:red;
+}
+
+.notetext
+{
+	color:green;
+}
+
+/* Used to draw a "star" near reqired field */
+.starrequired
+{
+	color:red;
+}
+
+/* social network*/
+div#sonet_events_ms_message {width:150px;}
+
+/* End */
+/* /bitrix/templates/books/components/bitrix/menu/horizontal_multilevel/style.css?14791282694598 */
+/* /bitrix/components/bitrix/menu/templates/.default/style.min.css?1479122441490 */
+/* /bitrix/components/bitrix/system.auth.form/templates/.default/style.min.css?1479122443424 */
+/* /bitrix/components/bitrix/breadcrumb/templates/.default/style.min.css?1479122434448 */
+/* /bitrix/components/bitrix/voting.form/templates/main_page/style.css?1479122944397 */
+/* /bitrix/templates/books/styles.css?14791282641228 */
+/* /bitrix/templates/books/template_styles.css?14791282693801 */

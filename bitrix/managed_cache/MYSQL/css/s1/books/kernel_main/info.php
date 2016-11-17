@@ -1,0 +1,1 @@
+<? $arFilesInfo = array( 'FILES' => array("/bitrix/js/main/core/css/core.css" => "14791224312854","/bitrix/js/main/core/css/core_popup.css" => "147912243129699",), 'CUR_SEL_CNT' => '278', 'CUR_IE_CNT' => '0'); ?>
