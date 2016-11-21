@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001479399162';
-$dateexpire = '001479402762';
+$datecreate = '001479465051';
+$dateexpire = '001479468651';
 $ser_content = 'a:2:{s:7:"CONTENT";s:1154:"<div class="bx_sitemap"><ul class="bx_sitemap_ul">
 	<li id="bx_1847241719_10"><h2 class="bx_sitemap_li_title"><a href="/e-store/books/10/">Бизнес-литература <span>(3)</span></a></h2></li>
 	<li id="bx_1847241719_11"><h2 class="bx_sitemap_li_title"><a href="/e-store/books/11/">Детская литература <span>(3)</span></a></h2></li>

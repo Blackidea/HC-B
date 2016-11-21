@@ -1,0 +1,231 @@
+input {outline: none;}
+input:-webkit-autofill {
+	-webkit-box-shadow: inset 0 0 0 50px #fff !important; /* Цвет фона */
+	-webkit-text-fill-color: #999 !important; /* цвет текста */
+	color: #999 !important; /* цвет текста */
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block
+}
+audio, canvas, video {
+	display: inline;
+	zoom: 1
+}
+audio:not([controls]) {
+	display: none;
+	height: 0
+}
+[hidden] {
+	display: none
+}
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-size: 100%
+}
+html, button, input, select, textarea {
+	font-family: sans-serif
+}
+h1{
+	font-size: 14px;
+	margin: 0
+}
+h2{
+	font-size: 14px;
+	margin: 0
+}
+h3{
+	font-size: 14px;
+	margin: 0
+}
+h4{
+	font-size: 14px;
+	margin: 0
+}
+h5 {
+	font-size: 14px;
+	margin: 0
+}
+h6{
+	font-size: 14px;
+	margin: 0
+}
+abbr[title] {
+	border-bottom: 1px dotted
+}
+b, strong {
+	font-weight: 700
+}
+blockquote{
+	margin: 0
+}
+dfn{
+	font-style: italic
+}
+hr{
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0
+}
+mark {
+	background: #ff0;
+	color: #000
+}
+code, kbd, pre, samp {
+	_font-family: 'courier new', monospace;
+	font-family: monospace, serif;
+	font-size: 14px
+}
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word
+}
+q {
+	quotes: none
+}
+q:before, q:after {
+	content: none
+}
+small {
+	font-size: 80%
+}
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline
+}
+sup {
+	top: 0
+}
+sub {}dd {
+	margin: 0 0 0 40px
+}
+menu, ol, ul {
+	padding: 0 0 0 40px
+}
+nav ul, nav ol {
+	list-style: none;
+	list-style-image: none
+}
+img {
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+	vertical-align: middle;
+}
+svg:not(:root) {
+	overflow: hidden
+}
+fieldset {
+	border: 1px solid silver;
+	margin: 0 2px;
+	padding: 0;
+}
+legend {
+	border: 0;
+	margin-left: -7px;
+	padding: 0;
+	white-space: normal
+}
+button, input, select, textarea {
+	font-size: 100%;
+	margin: 0;
+	vertical-align: middle
+}
+button, input {
+	line-height: normal
+}
+button, select {
+	text-transform: none
+}
+button, html input[type=button],
+input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+	overflow: visible
+}
+button[disabled], html input[disabled] {
+	cursor: default
+}
+input[type=checkbox], input[type=radio] {
+	box-sizing: border-box;
+	height: 13px;
+	padding: 0;
+	width: 13px
+}
+input[type=search] {
+	-moz-box-sizing: content-box;
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box
+}
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+	-webkit-appearance: none
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0
+}
+textarea {
+	overflow: auto;
+	vertical-align: top
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+.clear:before, .clear:after {
+	content: " ";
+	display: table
+}
+.clear:after {
+	clear: both
+}
+.clear {
+	zoom: 1
+}
+*, :before, :after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+body, figure, form {
+	margin: 0
+}
+a:focus, a:active, a:hover {
+	outline: 0
+}
+p, pre, dl, menu, ol, ul {
+	margin: 0
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ 
+.disable-hover,
+.disable-hover * {
+	pointer-events: none !important;
+}
+.grayscall {
+	-moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	-o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	-webkit-filter: grayscale(100%);
+	filter: gray;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+}
+.float-right {
+	float: right;
+}
+.float-left {
+	float: left;
+}
+.hide {
+	display: none;
+}

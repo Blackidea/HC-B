@@ -1,0 +1,32 @@
+[
+	{
+		"STORE": "10",
+		"STORE_NAME":"Холидей",
+		"LABEL_NAME": "Холидей Классик",
+		"ADDRESS": "630055, г. Новосибирск, ул. Героев труда, 18",
+		"GEO_LATITUDE":"54.865907",
+		"GEO_LONGITUDE": "83.081147",
+		"OPEN_TIME": "8:00",
+		"CLOSE_TIME": "12:00"
+	},
+	{
+		"STORE": "11",
+		"STORE_NAME":"Централь",
+		"LABEL_NAME": "Холидей Классик",
+		"ADDRESS": "630132, г. Новосибирск, ул. Нарымская, 19",
+		"GEO_LATITUDE":"55.041875",
+		"GEO_LONGITUDE": "82.906631",
+		"OPEN_TIME": "8:00",
+		"CLOSE_TIME": "12:00"
+	},
+	{
+		"STORE": "12",
+		"STORE_NAME":"Крез",
+		"LABEL_NAME": "Холидей Классик",
+		"ADDRESS": "630128, г. Новосибирск, ул. Демакова, 3",
+		"GEO_LATITUDE":"54.864088",
+		"GEO_LONGITUDE": "83.101871",
+		"OPEN_TIME": "8:00",
+		"CLOSE_TIME": "12:00"
+	}
+]
