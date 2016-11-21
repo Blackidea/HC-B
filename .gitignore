@@ -1,0 +1,5 @@
+# Local System Files (i.e. cache, logs, etc.) #
+/bitrix/cache
+/bitrix/managed_cache
+/bitrix/stack_cache
+
