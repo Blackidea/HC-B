@@ -1,0 +1,6 @@
+2016-11-23 14:26:17 -  - exec CUpdateClient::GetUpdatesList
+2016-11-23 14:26:17 -  - exec CUpdateClient::CollectRequestData
+2016-11-23 14:26:17 -  - LICENSE_KEY=X&lang=ru&SUPD_VER=16.0.12&VERSION=16.5.4&TYPENC=D&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=holyday.local&CHHB=holyday.local&CSAB=127.0.0.1&CANGZIP=Y&CLIENT_PHPVER=5.5.19&stable=Y&NGINX=Y&rerere=Y&bitm_main=16.5.4&bitm_abtest=16.0.0&bitm_bitrixcloud=16.0.0&bitm_blog=16.5.4&bitm_catalog=16.5.3&bitm_clouds=16.0.1&bitm_compression=16.0.0&bitm_conversion=15.5.6&bitm_currency=16.5.0&bitm_eshopapp=15.0.0&bitm_fileman=16.5.4&bitm_form=15.0.2&bitm_forum=16.5.2&bitm_highloadblock=16.0.2&bitm_iblock=16.5.2&bitm_mobileapp=16.0.5&bitm_perfmon=16.0.0&bitm_photogallery=16.0.1&bitm_pull=16.5.1&bitm_sale=16.5.0&bitm_scale=16.0.0&bitm_search=16.0.0&bitm_security=16.0.3&bitm_sender=16.0.3&bitm_seo=16.0.3&bitm_socialservices=16.5.4&bitm_storeassist=16.0.1&bitm_subscribe=16.0.0&bitm_translate=14.5.0&bitm_vote=15.5.0&bitl_en=&bitl_ru=&bith_ru=&bith_en=&SUPD_OFC=Small&SUPD_SRS=RU&SUPD_CMP=N&SALE_15=Y
+2016-11-23 14:26:17 -  - exec CUpdateClient::GetHTTPPage
+2016-11-23 14:26:18 -  - TIME GetUpdatesList(request) 0.259 sec
+2016-11-23 14:26:18 -  - exec CUpdateClient::ParseServerData

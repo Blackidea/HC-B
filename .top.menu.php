@@ -9,35 +9,35 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Каталог", 
-		"/personal/", 
+		"catalog/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Рецепты", 
-		"/content/", 
+		"/recipes/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Список покупок", 
-		"/e-store/", 
+		"/buy-list/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Дисконтные карты", 
-		"/communication/", 
+		"/cards/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Новости", 
-		"/novosti/", 
+		"/news/", 
 		Array(), 
 		Array(), 
 		"" 

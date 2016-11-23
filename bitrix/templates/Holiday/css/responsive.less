@@ -22,23 +22,26 @@
 			border-bottom:1px solid #E6E6E6;
 			.user_autorization{
 				a{
+					float: none;
 					&.user_profile{
+						width: auto;
+						height: auto;
+						float: none;
+						background: none;
+						mask:none;
 						position: relative;
 						margin-left: 13px;
-						&:before{
-							content: '';
+						svg{
 							position: absolute;
 							left: -21px;
-							top: -3px;
+							top: -1px;
 							width: 13px;
 							height: 17px;
-							background-color: @color_red;
-							mask:url(../img/icon_user.svg) center no-repeat;
-							fill: currentColor;
+							fill: @color_red;
 						}
 						&:hover{
-							&:before{
-								background-color: @color_orange;
+							svg{
+								fill: @color_orange;
 							}
 						}
 					}
@@ -119,6 +122,7 @@
 			background-size: cover;
 		}
 		.arrow_left{
+			display: none;
 			position: absolute;
 			left: 0;
 			top: 50%;
@@ -135,9 +139,7 @@
 				margin-top:24px;
 				width: 11px;
 				height: 19px;
-				background-color: #fff;
-				mask:url(../img/arrow_left.svg) center no-repeat;
-				fill: currentColor;
+				background:url(../img/arrow_left.svg) center no-repeat;
 				z-index: 99;
 			}
 		}
@@ -159,9 +161,7 @@
 				width: 11px;
 				height: 19px;
 				transform:rotate(180deg);
-				background-color: #fff;
-				mask:url(../img/arrow_left.svg) center no-repeat;
-				fill: currentColor;
+				background:url(../img/arrow_left.svg) center no-repeat;
 				z-index: 99;
 			}
 		}
@@ -210,7 +210,6 @@
 			}
 		}
 	}
-	/*========STATISTIC=======*/
 	.statistic{
 		padding-top: 18px;
 		padding-bottom: 20px;
@@ -229,15 +228,19 @@
 		}
 		.item{
 			position: relative;
-			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-			background: #fff;
-			padding-top: 28px;
-			padding-left: 20px;
-			padding-right: 20px;
-			color: @color_red_light;
-			font-family: 'Rubik';
-			min-height: 193px;
-			margin-bottom: 40px;
+			.item_container{
+				position: relative;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+				background: #fff;
+				padding-top: 28px;
+				padding-left: 20px;
+				padding-right: 20px;
+				color: @color_red_light;
+				font-family: 'Rubik';
+				min-height: 193px;
+				margin-bottom: 40px;
+				z-index: 2;
+			}
 			.title{
 				font-size: 70px;
 				font-weight: 300;
@@ -252,27 +255,38 @@
 				bottom: -30px;
 				.st1{
 					fill:@color_red_light;
+					stroke:none;
+				}
+				.st0{
+					stroke:#fff;
+					fill:#fff;
 				}
 				svg{
 					position: relative;
 					z-index: 5;
 				}
-			
-					.drop_shadow{
-						top: -5px;
-						z-index: -1;
-						filter: drop-shadow( 0px 14px 8px hsla(0, 0%, 0%, 0.15));
-						position: absolute;
-					}
-				
 			}
 			.text{
 				text-transform: uppercase;
 				font-size: 16px;
 				font-weight: 300;
 			}
+			.drop_shadow{
+				right: 15px;
+				bottom: -28px;
+				z-index: 0;
+				position: absolute;
+				svg{
+					filter: drop-shadow( 0px 14px 8px hsla(0, 0%, 0%, 0.15)) !important;
+				}
+				.st1{
+					fill:#fff !important;
+				}
+			}
 			&.odd{
-				color: @color_red;
+				.item_container{
+					color: @color_red;
+				}
 				.icon{
 					.st1{
 						fill:@color_red;
@@ -369,18 +383,37 @@
 			position: relative;
 			transition:0.5s all;
 			padding-bottom: 8px;
+			svg{
+				display: none;
+				width: 185px;
+				height:125px;
+				margin-bottom: -17px;
+				.st0{
+					stroke: #dddddd;
+					fill: #dddddd;
+					transition:0.5s all;
+				}
+				.st1{
+					fill: #dddddd;
+					transition:0.5s all;
+				}
+			}
 		}
 		.col_hover{
 			&:hover{
 				.title_bg{
 					color: @color_orange;
 				}
-				.icon_manager{
-					background-color: @color_red;
-					opacity: 1;
-				}
-				.icon_build{
-					background-color: @color_red;
+				.icon{
+					svg{
+						.st0{
+							stroke: @color_red;
+							fill: @color_red;
+						}
+						.st1{
+							fill: @color_red;
+						}
+					}
 					opacity: 1;
 				}
 			}
@@ -399,16 +432,16 @@
 		line-height: 28px;
 		text-align: center;
 		z-index: 9999;
-		&:after{
-			content: '';
+		cursor: pointer;
+		svg{
 			display: inline-block;
 			vertical-align: middle;
-			background-color: #fff;
 			width: 19px;
 			height: 11px;
 			transform:rotate(180deg);
-			mask:url(../img/arrow_up.svg) center no-repeat;
-			fill: currentColor;
+			.st0{
+				stroke: #fff;
+			}
 		}
 		&:hover{
 			background-color: @color_red
@@ -419,6 +452,20 @@
 		.logo_blackedia{
 			width: 93px;
 			height: 12px;
+		}
+	}
+	.popup_window{
+		
+		.popup_container{
+			top: 15%;
+			padding: 30px;
+			.title{
+				font-size: 30px;
+			}
+			.close{
+				top: 30px;
+				right: 30px;
+			}
 		}
 	}
 }
@@ -580,6 +627,7 @@
 			}
 		}
 		.title_bg{
+
 			margin-top: -4px;
 			text-align: center;
 			width: 50%;
@@ -591,44 +639,17 @@
 			text-transform: uppercase;
 			position: relative;
 			transition:0.5s all;
-			.icon_manager{
-				position: absolute;
-				bottom: -17px;
-				background-color: #dddddd;
-				mask:url(../img/footer_bg_manager.svg) left no-repeat;
-				fill: currentColor;
-				width: 185px;
-				height:125px;
-				opacity: 0.3;
-				transition:0.5s all;
+			svg{
+				display: block;
 			}
-			.icon_build{
+			.icon{
 				position: absolute;
 				bottom: -17px;
-				background-color: #dddddd;
-				mask:url(../img/footer_bg_build.svg) left no-repeat;
-				fill: currentColor;
-				width: 185px;
-				height:125px;
 				opacity: 0.3;
 				transition:0.5s all;
 			}
 		}
-		.col_hover{
-			&:hover{
-				.title_bg{
-					color: @color_orange;
-				}
-				.icon_manager{
-					background-color: @color_red;
-					opacity: 1;
-				}
-				.icon_build{
-					background-color: @color_red;
-					opacity: 1;
-				}
-			}
-		}
+		
 	}
 }
 @media (min-width: 1200px) {

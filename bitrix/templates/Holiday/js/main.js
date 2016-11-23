@@ -15,7 +15,80 @@
 		_currentNiche: App._currentNiche || 0,
 		
 		initPage: function(){
+			//SELECT INIT
+			$('[data-select]').js_select();
+			//Function lock body
+			function lock_scroll_body($contain){
+				var scrollTop=$(win).scrollTop();
+				App.body.height($(document).height())
+				App.body.css('margin-top', '-'+scrollTop+'px')
+				App.body.data('scroll', scrollTop)
+			
+				App.body.addClass('scroll_lock');
+				var selScrollable = $contain;
+				$(document).on('touchmove',function(e){
+					e.preventDefault();
+				});
+				$('body').on('touchstart', selScrollable, function(e) {
+					if (e.currentTarget.scrollTop === 0) {
+						e.currentTarget.scrollTop = 1;
+					} else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop + e.currentTarget.offsetHeight) {
+						e.currentTarget.scrollTop -= 1;
+					}
+				});
+				$('body').on('touchmove', selScrollable, function(e) {
+					e.stopPropagation();
+				});
+				$($contain).focus();
+			}
 
+			//Function unlock body
+			function unlock_scroll_body(){
+				App.body.removeAttr('style')
+				App.body.removeClass('scroll_lock')
+				$(win).scrollTop(App.body.data('scroll'))
+				$(document).off('touchmove');
+				$('body').off('touchstart');
+				$('body').off('touchmove');
+			}
+
+			//MOBILE BUTTON
+			$(doc).on('click', '.mobile_button', function(e){
+				e.preventDefault();
+				var t=$(this);
+				t.toggleClass('opened');
+				if(t.hasClass('opened')){
+					$('.dropdown_menu').slideDown();
+				} else {
+					$('.dropdown_menu').slideUp();
+				}
+				
+			});
+
+			//PASSWORD BUTTON
+			$(doc).on('click','.show_password', function(e){
+				e.preventDefault();
+				input=$(this).parent().find('input');
+				if(!$(this).hasClass('active')){
+					$(this).addClass('active');
+					input.attr('type','text')
+				} else {
+					$(this).removeClass('active');
+					input.attr('type','password')
+				}
+			});
+			//POPUP EVENTS
+			$(doc).on('click', '[data-showpopup]', function(e){
+				e.preventDefault();
+				id=$(this).data('showpopup');
+				$(id+', .shadow_site').fadeIn();
+				lock_scroll_body('.popup_window');
+			});
+			$(doc).on('click', '.close', function(e){
+				e.preventDefault();
+				unlock_scroll_body()
+				$('.popup_window, .shadow_site').fadeOut();
+			});
 			//BUTTON UP START
 			if($(win).width()>App.mobile){
 				$(doc).on('click', '.button_up', function(e){
@@ -104,12 +177,25 @@
 					requestAnimationFrame: true
 				});
 				dragdealerFoods.reflow();
-				$('.recepts .arrow_right').click(function() {
-					dragdealerFoods.setStep(dragdealerFoods.getStep()[0]  + 1);
+				var arrow_left=$('.recepts .arrow_left'),
+					arrow_right=$('.recepts .arrow_right');
+
+				arrow_right.click(function() {
+					dragdealerFoods.setStep(dragdealerFoods.getStep()[0]  + 5);
+					if(dragdealerFoods.getStep()[0]>1){
+						arrow_left.show()
+					} else {
+						arrow_left.hide()
+					}
 					return false;
 				});
-				$('.recepts .arrow_left').click(function() {
-					dragdealerFoods.setStep(dragdealerFoods.getStep()[0]  - 1);
+				arrow_left.click(function() {
+					dragdealerFoods.setStep(dragdealerFoods.getStep()[0] - 5);
+					if(dragdealerFoods.getStep()[0]>1){
+						arrow_left.show()
+					} else {
+						arrow_left.hide()
+					}
 					return false;
 				});
 				$(win).resize(function(){
@@ -118,6 +204,11 @@
 						$('.recepts .arrow_right, .recepts .arrow_left').hide();
 					} else {
 						$('.recepts .arrow_right, .recepts .arrow_left').show();
+						if(dragdealerFoods.getStep()[0]>1){
+							arrow_left.show()
+						} else {
+							arrow_left.hide()
+						}
 					}
 				})
 				$(win).on('scroll', function(){
@@ -155,13 +246,14 @@
 		initMap: function(){
 			//MAP START
 			if($('section.map').length){
-				ymaps.ready(init);
 				function init () {
-					var myMap = new ymaps.Map('map',{
-						center: [55.008711,83.171884],
-						zoom: 10
+					
+					var map = new google.maps.Map(document.getElementById('map'), {
+						zoom: 12,
+						scrollwheel: false,
+						center: {lat: 55.0060833, lng: 82.9226662},
+						styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]
 					});
-					var Placemarks = [];
 					$.getJSON( "/bitrix/templates/Holiday/js/map_base.json", function( data ) {
 						
 						$.each( data, function( key, val ) {
@@ -170,32 +262,93 @@
 								opentime=val['OPEN_TIME'],
 								closetime=val['CLOSE_TIME'],
 								adress=val['ADDRESS'];
-							var myPlacemark = new ymaps.Placemark([cordx, cordy] , {
-								iconContent: '<div style="color:#fff; text-align:center; width:90px;margin-top:27px;margin-left:-5px;">'+opentime+'-'+closetime+'</div>',
-								balloonContent: adress,
-							},{
-								iconImageHref: '/bitrix/templates/Holiday/img/map.svg',
-								iconImageSize: [90, 90],
-								iconImageOffset: [-45,-60]
+								 var icon = {
+									url: "/bitrix/templates/Holiday/img/map.svg",
+									anchor: new google.maps.Point(0,0),
+									origin: new google.maps.Point(0,-3),
+									scaledSize: new google.maps.Size(100,44),
+								}
+								
+								var marker = new google.maps.Marker({
+									position: {lat: parseFloat(cordx), lng: parseFloat(cordy)},
+									label:{
+										text: opentime+'-'+closetime,
+										color: 'white',
+										fontSize: '14px',
+									},
+									map: map,
+									icon: icon,
+								});
+
+								var content='<div class="map_container"><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div><div class="text">'+adress+'</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div><div class="text">8 (908) 545-49-76</div></div><div class="item"><div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div><div class="text">'+opentime+'-'+closetime+'</div></div><div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div><a class="more_link" href="#">Подробнее</a></div>';
+								var infowindow = new google.maps.InfoWindow({
+									content: content,
+									maxWidth:241,
+									pixelOffset: new google.maps.Size(-240,198)
+								});
+
+								marker.addListener('click', function() {
+									infowindow.open(map, marker);
+									map.setOptions({draggable: false});
+									this.set('label', 
+										{
+											text:' ',
+											color: 'white',
+											fontSize: '14px',
+										}
+									)
+									App.initSVG();
+								});
+
+								google.maps.event.addListener(infowindow,'closeclick',function(){
+									map.setOptions({draggable: true});
+									marker.set('label', 
+										{
+											text: opentime+'-'+closetime,
+											color: 'white',
+											fontSize: '14px',
+										}
+									)
+								});
+								
+								google.maps.event.addListener(infowindow, 'domready', function() {
+									var iwOuter = $('.gm-style-iw');
+									iwOuter.parent().addClass('gm-style-iw-container');
+									iwOuter.first().css('max-width', 'auto')
+									var prev = iwOuter.prev();
+									prev.first().css('width', '100%').css('height', '100%');
+									prev.first().find('div:nth-child(2)').css('border-radius', '10px').css('box-shadow','0 3px 27px rgba(65, 18, 13, 0.2)').css('background', 'none');
+									prev.first().find('div:last-child').css('border-radius', '10px')
 							});
 
-							myMap.geoObjects.add(myPlacemark);
 						});
 					});
-					myMap.controls.add('zoomControl');
-					//console.log(Placemarks);
-						/*
-					var myPlacemark = new ymaps.Placemark([56.326944, 44.0075] , {
-						iconContent: '<div style="color:#fff; text-align:center; width:90px;margin-top:27px;margin-left:-5px;">8:00-11:00</div>',
-						balloonContent: 'TEST CONTENT',
-					},{
-						iconImageHref: '../img/map.svg',
-						iconImageSize: [90, 90],
-						iconImageOffset: [-45,-60]
-					});
-					myMap.geoObjects.add(myPlacemark);*/
 				}
 			}
+			init();
+		},
+		initSVG: function(){
+			$('img.svg').each(function(){
+				var $img = $(this);
+				var imgID = $img.attr('id');
+				var imgClass = $img.attr('class');
+				var imgURL = $img.attr('src');
+				$.get(imgURL, function(data) {
+					var $svg = $(data).find('svg');
+					if(typeof imgID !== 'undefined') {
+						$svg = $svg.attr('id', imgID);
+					}
+					if(typeof imgClass !== 'undefined') {
+						 $svg = $svg.attr('class', imgClass+' replaced-svg');
+					}
+					$svg = $svg.removeAttr('xmlns:a');
+					if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+						$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+					}
+					$img.replaceWith($svg);
+				}, 'xml');
+			
+			});
 		},
 		initApp: function() {
 			App.initPage();
@@ -203,6 +356,7 @@
 			App.initReceptsSlider();
 			App.initNumber();
 			App.initMap();
+			App.initSVG();
 		}
 	});
 	App.initApp();
