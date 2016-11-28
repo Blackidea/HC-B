@@ -1,6 +1,4 @@
 (function ($) {
-	
-	
 	$.fn.js_select= function() {
 		var box = this,
 		doc = document;
@@ -18,18 +16,21 @@
 			$box_select_js = $('.js_select'),
 			$box_select_ul = $box_select_js.find('ul'),
 			$box_select_li = $box_select_js.find('li span');
-		$(doc).on('click', '.js_select li span', function () {
-			var $t = $(this),
+		$(doc).on('click', '.js_select li', function () {
+			var $t = $(this).find('span'),
 				$parent_selected = $t.parents('li').parents('ul').parents('.js_select');
 			$parent_selected.find('.js_selected span').html($t.html());
 			$('select[name="' + $t.parents('.js_select').data('select-name') + '"] option').removeAttr('selected');
 			$('select[name="' + $t.parents('.js_select').data('select-name') + '"] option[value="' + $t.data('selected') + '"]').attr('selected', 'selected');
 		});
 		$(doc).on('click', '.js_selected', function () {
-			$(this).parents('.js_select').addClass('opened');
-		});
-		$(doc).on('click', '.js_selected .js_select_arrow', function () {
-			$(this).parents('.js_select').removeClass('opened');
+			var parrent=$(this).parents('.js_select');
+			
+			if(parrent.hasClass('opened')){
+				$(this).parents('.js_select').removeClass('opened');
+			} else {
+				$(this).parents('.js_select').addClass('opened');
+			}
 		});
 		$box_selected.on('clickoutside', function () {
 			$(this).parents('.js_select').removeClass('opened');
