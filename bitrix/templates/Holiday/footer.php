@@ -407,7 +407,7 @@ if($page!="/"):?>
 			<line id="XMLID_8_" class="st0" x1="17.5" y1="1.5" x2="9.5" y2="9.5"/>
 			</svg>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		
         
 		<script src="http://maps.google.com/maps/api/js?sensor=false""></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/dragdealer.js")?>"></script>

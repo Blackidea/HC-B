@@ -10,8 +10,29 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+
+require_once($_SERVER["DOCUMENT_ROOT"]."/news/ajax.js"); 
 $this->setFrameMode(true);
 ?>
+<style>
+.loading-gif{
+    display: none;
+}
+.loading-gif img{
+    width: 10%;
+    position: fixed;
+    margin-left: -5%;
+    left: 50%;
+    top: 50%;
+    margin-top: -5%;
+}
+   
+</style>
+<div class="js-pager-wrepper" style="display: none;">
+<?if($arParams["DISPLAY_TOP_PAGER"]):?>
+	<?=$arResult["NAV_STRING"]?><br />
+<?endif;?>
+</div>
 <section class="news">
     <div class="container">
         <h2><?$APPLICATION->ShowTitle()?></h2>
@@ -42,5 +63,23 @@ $this->setFrameMode(true);
 				</div>
             <?endforeach;?>
         </div>
+        <div class="loading-gif">
+            <img src="<?=$APPLICATION->GetTemplatePath("img")?>/loading.gif"/>
+        </div>
+        <div class="text-center">
+            <a href="#" data-counter="<?=$GLOBALS['pagesCount']?>" class="js-more-news button">Показать еще</a>
+            
+        </div>
+        
+    </div>
+</section>
+<!-- SUBSCRIBE -->
+<section class="subscribe">
+    <div class="conteiner-fluid">
+        <div class="title">Подпишитесь на нашу новостную рассылку, <br>и будьте в курсе последних событий!</div>
+        <form action="">
+            <input type="text" placeholder="Email">
+            <input type="submit" value="Подписаться">
+        </form>
     </div>
 </section>

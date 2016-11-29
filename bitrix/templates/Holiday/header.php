@@ -5,7 +5,7 @@
 <meta name="viewport" content="initial-scale=1">
 <link rel="stylesheet" type="text/css" href="<?=$APPLICATION->GetTemplatePath("")?>css/app.min.css">
 
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <?$APPLICATION->ShowHead()?>
 <title><?$APPLICATION->ShowTitle()?></title>
 </head>

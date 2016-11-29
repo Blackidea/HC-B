@@ -19,16 +19,16 @@ $arUrlRewrite = array(
 		"PATH" => "/e-store/books/reviews/index.php",
 	),
 	array(
-		"CONDITION" => "#^/communication/forum/#",
-		"RULE" => "",
-		"ID" => "bitrix:forum",
-		"PATH" => "/communication/forum/index.php",
-	),
-	array(
 		"CONDITION" => "#^/e-store/xml_catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/e-store/xml_catalog/index.php",
+	),
+	array(
+		"CONDITION" => "#^/communication/forum/#",
+		"RULE" => "",
+		"ID" => "bitrix:forum",
+		"PATH" => "/communication/forum/index.php",
 	),
 	array(
 		"CONDITION" => "#^/communication/blog/#",
