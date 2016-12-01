@@ -15,8 +15,8 @@
 <style>
 
 </style>
-<input type="hidden" name="pageCount" value="<?=$arResult["NavPageCount"]?>"/>
-<input type="hidden" name="pageCur" value="<?=$arResult["NavPageNomer"]?>"/>
+<input type="text" name="pageCount" value="<?=$arResult["NavPageCount"]?>"/>
+<input type="text" name="pageCur" value="<?=$arResult["NavPageNomer"]?>"/>
 
 <?
 $GLOBALS['pagesCount']  = $arResult["NavPageCount"];

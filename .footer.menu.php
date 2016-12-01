@@ -2,28 +2,28 @@
 $aMenuLinks = Array(
 	Array(
 		"Истории успеха", 
-		"/actions/", 
+		"/stories/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Отзывы сотрудников", 
-		"catalog/", 
+		"reviews/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Отзывы кадровых агенств", 
-		"/recipes/", 
+		"/reviews-agences/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Вакансии", 
-		"/buy-list/", 
+		"/vacancies/", 
 		Array(), 
 		Array(), 
 		"" 
