@@ -5,4 +5,8 @@ $APPLICATION->SetTitle("Создание кода компонентов");
 	"bitrix:main.pagenavigation",
 	"",
 Array()
+);?><?$APPLICATION->IncludeComponent(
+	"bitrix:form",
+	"",
+Array()
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
