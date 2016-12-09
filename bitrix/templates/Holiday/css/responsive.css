@@ -502,6 +502,195 @@
     line-height: 25px;
     font-size: 16px;
   }
+  .get_stores .filter_stores {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+  }
+  .get_stores .search_city {
+    position: absolute;
+    z-index: 2;
+    left: 25px;
+    top: 25px;
+    width: 263px;
+  }
+  .get_stores .stores_container,
+  .get_stores .stores_map {
+    height: 563px;
+  }
+  .get_stores .select_all_cat {
+    margin-top: 8px;
+  }
+  .get_stores .stores_list {
+    overflow: hidden;
+    height: 563px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  }
+  .get_stores .stores_list li {
+    background: #108408;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Rubik';
+    line-height: 22px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 15px;
+    min-height: 267px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .get_stores .stores_list li:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-top: 24px solid #000000;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+  }
+  .get_stores .stores_list li img {
+    display: none;
+  }
+  .get_stores .stores_list li .items_set {
+    margin-bottom: 14px;
+  }
+  .get_stores .stores_list li .items_set:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    display: block;
+  }
+  .get_stores .stores_list li .item {
+    margin-bottom: 14px;
+    display: flex;
+    flex-flow: row nowrap;
+    padding-right: 15px;
+  }
+  .get_stores .stores_list li .item .icon {
+    margin-right: 10px;
+    width: 16px;
+    padding-top: 2px;
+  }
+  .get_stores .stores_list li .item .icon svg {
+    width: 16px;
+    fill: #fff;
+    height: auto;
+  }
+  .get_stores .stores_list li .icon_set {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .get_stores .stores_list li .icon_set svg {
+    margin-right: 30px;
+    width: 24px;
+    height: auto;
+    margin-bottom: 18px;
+    fill: black;
+  }
+  .get_stores .stores_list li .more_link {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  .get_stores .stores_list li:nth-child(odd) {
+    background: #198c11;
+  }
+  .get_stores .stores_list li.active {
+    position: relative;
+    z-index: 2;
+    background: #3eaa36;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  }
+  .feedback {
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    background: url(../img/bg_feedback.jpg) center no-repeat;
+    background-size: cover;
+    padding-top: 109px;
+    padding-bottom: 168px;
+  }
+  .feedback .feedback_container {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding-bottom: 35px;
+  }
+  .feedback .feedback_container input[type=submit] {
+    width: 165px;
+  }
+  .feedback .feedback_container h2 {
+    padding-top: 30px;
+    margin-bottom: 50px;
+  }
+  .feedback .feedback_container .pull-left {
+    float: left !important;
+  }
+  .contacts .contact_container .title {
+    text-align: left;
+  }
+  .vakansy .vakansy_filter {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 28px;
+    display: block !important;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    height: auto;
+  }
+  .vakansy .vakansy_list .search_reslut {
+    text-align: left;
+  }
+  .vakancy_full .vakansy_params {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+  .vakancy_full .vakansy_params > div {
+    text-align: left;
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .vakancy_full .vakansy_params > div:after {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    content: '';
+    display: inline-block;
+    vertical-align: top;
+    width: 1px;
+    height: 100%;
+    background-color: #f5dddb;
+    border-radius: 1px;
+  }
+  .vakancy_full .vakansy_params div:last-child:after {
+    display: none;
+  }
+  .vakancy_full .vakansy_container .map_vakansy {
+    height: 550px;
+  }
+  .recepts_full .recepts_content h1 {
+    font-size: 40px;
+    line-height: 42px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+  .recepts_full .recepts_content .repect_ingridients .button {
+    width: 360px;
+  }
+  .recepts_full .recepts_content .repect_ingridients ul li {
+    width: 50%;
+  }
 }
 @media (min-width: 992px) {
   header .user_block {

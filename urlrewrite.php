@@ -1,6 +1,12 @@
 <?
 $arUrlRewrite = array(
 	array(
+		"CONDITION" => "#^/vacancies/([0-9]+)/#",
+		"RULE" => "ID=$1",
+		"PATH" => "/vacancies/vacansiya.php",
+	),
+    
+	array(
 		"CONDITION" => "#^/examples/my-components/news/#",
 		"RULE" => "",
 		"ID" => "demo:news",

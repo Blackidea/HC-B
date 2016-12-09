@@ -410,6 +410,9 @@ if($page!="/"):?>
 		
         
 		<script src="http://maps.google.com/maps/api/js?sensor=false""></script>
+		<script src="<?=$APPLICATION->GetTemplatePath("js/jquery.ba-outside-events.js")?>"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 		<script src="<?=$APPLICATION->GetTemplatePath("js/dragdealer.js")?>"></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/animateNumber.js")?>"></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/bootstrap.js")?>"></script>
@@ -417,7 +420,7 @@ if($page!="/"):?>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/slider.js")?>"></script>
         <script src="<?=$APPLICATION->GetTemplatePath("js/art_select.js")?>"></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/main.js")?>"></script>
-        
+        <script async src="https://usocial.pro/usocial/usocial.js?v=4.0.0" data-script="usocial" charset="utf-8"></script>
         
         
 	</body>

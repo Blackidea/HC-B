@@ -64,6 +64,8 @@ h1 {
 input[type=submit],
 button,
 .button {
+  display: inline-block;
+  vertical-align: top;
   text-decoration: none;
   padding-top: 14px;
   padding-bottom: 13px;
@@ -1473,7 +1475,9 @@ footer .social_buttons .social_list a:hover svg .st1 {
 }
 /*========NEWS FULL=======*/
 .news_full .all_news,
-.discounts_full .all_news {
+.discounts_full .all_news,
+.recepts_full .all_news,
+.vakancy_full .all_news {
   color: #108408;
   text-decoration: none;
   font-family: 'Rubik';
@@ -1484,7 +1488,9 @@ footer .social_buttons .social_list a:hover svg .st1 {
   vertical-align: top;
 }
 .news_full .all_news svg,
-.discounts_full .all_news svg {
+.discounts_full .all_news svg,
+.recepts_full .all_news svg,
+.vakancy_full .all_news svg {
   display: inline-block;
   vertical-align: middle;
   width: 28px;
@@ -1493,59 +1499,85 @@ footer .social_buttons .social_list a:hover svg .st1 {
   transform: rotate(180deg);
 }
 .news_full .all_news svg .st0,
-.discounts_full .all_news svg .st0 {
+.discounts_full .all_news svg .st0,
+.recepts_full .all_news svg .st0,
+.vakancy_full .all_news svg .st0 {
   fill: #108408;
   stroke: none;
 }
 .news_full .all_news svg .hover,
-.discounts_full .all_news svg .hover {
+.discounts_full .all_news svg .hover,
+.recepts_full .all_news svg .hover,
+.vakancy_full .all_news svg .hover {
   display: none;
 }
 .news_full .all_news:hover,
-.discounts_full .all_news:hover {
+.discounts_full .all_news:hover,
+.recepts_full .all_news:hover,
+.vakancy_full .all_news:hover {
   color: #68170f;
 }
 .news_full .all_news:hover svg .st0,
-.discounts_full .all_news:hover svg .st0 {
+.discounts_full .all_news:hover svg .st0,
+.recepts_full .all_news:hover svg .st0,
+.vakancy_full .all_news:hover svg .st0 {
   display: none;
 }
 .news_full .all_news:hover svg .hover,
-.discounts_full .all_news:hover svg .hover {
+.discounts_full .all_news:hover svg .hover,
+.recepts_full .all_news:hover svg .hover,
+.vakancy_full .all_news:hover svg .hover {
   display: block;
 }
 .news_full .all_news:hover svg .hover .st1,
-.discounts_full .all_news:hover svg .hover .st1 {
+.discounts_full .all_news:hover svg .hover .st1,
+.recepts_full .all_news:hover svg .hover .st1,
+.vakancy_full .all_news:hover svg .hover .st1 {
   fill: #68170f;
   stroke: none;
 }
 .news_full .news_list,
-.discounts_full .news_list {
+.discounts_full .news_list,
+.recepts_full .news_list,
+.vakancy_full .news_list {
   padding-top: 0;
 }
 .news_full .news_list .item,
-.discounts_full .news_list .item {
+.discounts_full .news_list .item,
+.recepts_full .news_list .item,
+.vakancy_full .news_list .item {
   padding-bottom: 18px;
 }
 .news_full .news_list .item .image,
-.discounts_full .news_list .item .image {
+.discounts_full .news_list .item .image,
+.recepts_full .news_list .item .image,
+.vakancy_full .news_list .item .image {
   height: 140px;
 }
 .news_full .news_list .item .date,
-.discounts_full .news_list .item .date {
+.discounts_full .news_list .item .date,
+.recepts_full .news_list .item .date,
+.vakancy_full .news_list .item .date {
   font-size: 14px;
   margin-bottom: 12px;
 }
 .news_full .news_list .item .title,
-.discounts_full .news_list .item .title {
+.discounts_full .news_list .item .title,
+.recepts_full .news_list .item .title,
+.vakancy_full .news_list .item .title {
   margin-bottom: 0;
 }
 .news_full .news_list .item .title a,
-.discounts_full .news_list .item .title a {
+.discounts_full .news_list .item .title a,
+.recepts_full .news_list .item .title a,
+.vakancy_full .news_list .item .title a {
   font-size: 15px;
   line-height: 20px;
 }
 .news_full .news_content,
-.discounts_full .news_content {
+.discounts_full .news_content,
+.recepts_full .news_content,
+.vakancy_full .news_content {
   border-radius: 3px;
   font-size: 16px;
   color: #333;
@@ -1554,36 +1586,48 @@ footer .social_buttons .social_list a:hover svg .st1 {
   padding-bottom: 10px;
 }
 .news_full .news_content ul li,
-.discounts_full .news_content ul li {
+.discounts_full .news_content ul li,
+.recepts_full .news_content ul li,
+.vakancy_full .news_content ul li {
   list-style: disc inside;
 }
 .news_full .news_content p,
-.discounts_full .news_content p {
+.discounts_full .news_content p,
+.recepts_full .news_content p,
+.vakancy_full .news_content p {
   margin-bottom: 20px;
 }
 .news_full .news_content img.img-full,
-.discounts_full .news_content img.img-full {
+.discounts_full .news_content img.img-full,
+.recepts_full .news_content img.img-full,
+.vakancy_full .news_content img.img-full {
   width: 100%;
   height: auto;
   margin-bottom: 25px;
 }
 .news_full .news_content .date,
-.discounts_full .news_content .date {
+.discounts_full .news_content .date,
+.recepts_full .news_content .date,
+.vakancy_full .news_content .date {
   font-family: 'Rubik';
   font-size: 14px;
   color: #999;
   margin-bottom: 5px;
 }
 .news_full .share_links,
-.discounts_full .share_links {
+.discounts_full .share_links,
+.recepts_full .share_links,
+.vakancy_full .share_links {
   padding-top: 30px;
   border-top: 1px solid #f5dddb;
 }
 .news_full .share_links .title,
-.discounts_full .share_links .title {
+.discounts_full .share_links .title,
+.recepts_full .share_links .title,
+.vakancy_full .share_links .title {
   font-size: 24px;
   color: #333;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 .discounts_full {
   margin-bottom: 50px;
@@ -1727,6 +1771,712 @@ footer .social_buttons .social_list a:hover svg .st1 {
 .recepts_list .filter_recepts input[type=submit] {
   width: 100%;
 }
+.recepts_full {
+  margin-bottom: 8px;
+}
+.recepts_full .all_news {
+  margin-bottom: 22px;
+}
+.recepts_full .recepts_content {
+  font-family: 'Rubik';
+  color: #333;
+  font-size: 16px;
+  line-height: 30px;
+}
+.recepts_full .recepts_content h1 {
+  color: #68170f;
+  font-family: 'Rubik';
+  font-size: 30px;
+  line-height: 32px;
+  margin-bottom: 31px;
+}
+.recepts_full .recepts_content h3 {
+  font-family: 'Rubik';
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.recepts_full .recepts_content .img-full {
+  width: 100%;
+  height: auto;
+  margin-bottom: 6px;
+}
+.recepts_full .recepts_content .recept_info {
+  margin-bottom: 10px;
+  color: #999;
+  font-family: 'Rubik';
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.recepts_full .recepts_content .recept_info .recept_rating {
+  margin-bottom: 10px;
+}
+.recepts_full .recepts_content .recept_info .recept_rating:after {
+  margin-left: 20px;
+  content: '';
+  display: inline-block;
+  vertical-align: top;
+  width: 1px;
+  height: 18px;
+  background-color: #ccc;
+  margin-right: 18px;
+  margin-top: -3px;
+}
+.recepts_full .recepts_content .recept_info .recept_rating span:first-child {
+  margin-left: 17px;
+}
+.recepts_full .recepts_content .recept_info .recept_rating span:last-child {
+  margin-right: -3px;
+}
+.recepts_full .recepts_content .recept_info .recept_rating span {
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 18px;
+  fill: #999;
+  opacity: 0.2;
+  margin-top: -2px;
+}
+.recepts_full .recepts_content .recept_info .recept_rating span.active {
+  opacity: 1;
+}
+.recepts_full .recepts_content .recept_info .recept_time {
+  margin-bottom: 10px;
+}
+.recepts_full .recepts_content .recept_info .recept_time:after {
+  margin-left: 15px;
+  content: '';
+  display: inline-block;
+  vertical-align: top;
+  width: 1px;
+  height: 18px;
+  background-color: #ccc;
+  margin-right: 20px;
+  margin-top: -3px;
+}
+.recepts_full .recepts_content .recept_info .recept_time svg {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-top: -3px;
+  margin-right: 9px;
+}
+.recepts_full .recepts_content .recept_info .recept_time svg .st0 {
+  stroke: #999;
+  fill: #999;
+  stroke-width: 1;
+}
+.recepts_full .recepts_content ol {
+  line-height: 27px;
+  margin-top: 16px;
+  padding: 0;
+}
+.recepts_full .recepts_content ol li {
+  margin-bottom: 12px;
+}
+.recepts_full .recepts_content .repect_ingridients {
+  margin-bottom: 50px;
+  color: #666;
+}
+.recepts_full .recepts_content .repect_ingridients .button {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+.recepts_full .recepts_content .repect_ingridients ul {
+  margin-bottom: 20px;
+  padding-top: 5px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.recepts_full .recepts_content .repect_ingridients ul li {
+  width: 100%;
+  padding-right: 15px;
+}
+.recepts_full .recepts_content .repect_ingridients ul li:before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  margin-right: 5px;
+  margin-top: -2px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100%;
+  background: #108408;
+}
+.recepts_full .share_links {
+  overflow: hidden;
+  margin-top: 25px;
+  padding-top: 0;
+}
+.recepts_full .share_tabs {
+  margin-bottom: 35px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+.recepts_full .share_tabs a {
+  z-index: 2;
+  position: relative;
+  width: 113px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 61px;
+  background-color: white;
+  border-radius: 3px 0px 3px 3px;
+  box-shadow: 6px 0 15px rgba(0, 0, 0, 0.15);
+  transition: 0.5s all;
+}
+.recepts_full .share_tabs a:hover {
+  box-shadow: 6px 0 20px rgba(0, 0, 0, 0.25);
+}
+.recepts_full .share_tabs a:hover svg {
+  fill: #68170f;
+}
+.recepts_full .share_tabs a:hover svg .st0 {
+  fill: #68170f;
+  stroke: #68170f;
+}
+.recepts_full .share_tabs a svg {
+  transition: 0.5s all;
+  fill: #d5310b;
+}
+.recepts_full .share_tabs a svg .st0 {
+  fill: #d5310b;
+  stroke: #d5310b;
+}
+.recepts_full .recepts {
+  padding-top: 0;
+}
+.recepts_full .recepts .recepts_slider {
+  padding-top: 12px;
+  height: auto;
+  overflow: visible;
+  text-align: right;
+}
+.recepts_full .recepts .recepts_slider .item {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+}
+.recepts_full .recepts .recepts_slider .item .item_image img {
+  width: 100%;
+  height: auto;
+}
+/*========STORES=======*/
+.get_stores h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.get_stores .dropdown_filter {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-left: 25px;
+  padding-right: 25px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.get_stores .dropdown_filter .scroll-element .scroll-bar {
+  background-color: #d0ccc5;
+}
+.get_stores .dropdown_filter .title {
+  padding-top: 15px;
+  user-select: none;
+  cursor: pointer;
+  color: black;
+  position: relative;
+  font-family: 'Rubik';
+  font-size: 20px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  line-height: 24px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+}
+.get_stores .dropdown_filter .arrow {
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  width: 15px;
+  height: 8px;
+}
+.get_stores .dropdown_filter .arrow svg {
+  width: 15px;
+  height: 9px;
+}
+.get_stores .dropdown_filter .arrow svg .st0 {
+  stroke: #68170f;
+  stroke-width: 1;
+  fill: none;
+}
+.get_stores .dropdown_filter .button {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.get_stores .dropdown_filter .filters_set {
+  display: none;
+  height: 200px;
+  overflow: auto;
+}
+.get_stores .dropdown_filter.opened {
+  padding-bottom: 15px;
+}
+.get_stores .dropdown_filter.opened .title {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f5dddb;
+}
+.get_stores .dropdown_filter.opened .arrow svg {
+  transform: rotate(180deg);
+}
+.get_stores .dropdown_filter.opened .arrow svg .st0 {
+  stroke: #999;
+  stroke-width: 1;
+  fill: none;
+}
+.get_stores .dropdown_filter.opened .filters_set {
+  display: block;
+}
+.get_stores .search_city {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.get_stores .filter_stores {
+  padding-top: 23px;
+  color: #bcbcbc;
+  font-family: 'Rubik';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.get_stores .filter_stores .item_filter {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+.get_stores .filter_stores .item_filter.active {
+  color: black;
+}
+.get_stores .filter_stores .item_filter.active svg {
+  opacity: 1;
+  fill: #68170f;
+}
+.get_stores .filter_stores .item_filter span {
+  margin-bottom: -3px;
+}
+.get_stores .filter_stores .item_filter svg {
+  display: block;
+  opacity: 0.5;
+  fill: #999;
+  margin-right: 10px;
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 100px;
+}
+.get_stores .filter_stores .item_filter label {
+  margin-right: 0;
+}
+.get_stores .stores_container {
+  height: 300px;
+  overflow: hidden;
+}
+.get_stores .stores_map {
+  height: 300px;
+}
+/*========FEEDBACK=======*/
+.feedback.feedback_contact input[type=file] {
+  font-size: 0;
+  width: 0 !important;
+  height: 0;
+  border: 0;
+  line-height: 0;
+  outline: 0;
+}
+.feedback.feedback_contact .add_file {
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  color: #999;
+  font-family: 'Rubik';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  border: 1px dashed #ccc;
+  height: 45px;
+}
+.feedback.feedback_contact .add_file span {
+  float: left;
+  padding-top: 13px;
+}
+.feedback.feedback_contact .add_file svg {
+  margin-top: 7px;
+  float: right;
+  width: 27px;
+  height: 29px;
+  fill: #d5310b;
+}
+.feedback.feedback_contact .feedback_container textarea {
+  height: 200px;
+}
+.feedback.feedback_contact .feedback_container svg.positioned {
+  right: -30px;
+}
+.feedback .feedback_container {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  background: #fff;
+  max-width: 810px;
+  margin: auto;
+  border-radius: 3px;
+  text-align: center;
+}
+.feedback .feedback_container .row {
+  position: relative;
+}
+.feedback .feedback_container input[type=submit] {
+  width: 245px;
+}
+.feedback .feedback_container .field {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  color: #666;
+  text-align: left;
+}
+.feedback .feedback_container .field label:first-child {
+  display: block;
+  font-family: 'Rubik';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.feedback .feedback_container .field input,
+.feedback .feedback_container .field textarea {
+  width: 100%;
+}
+.feedback .feedback_container h2 {
+  padding-bottom: 29px;
+  margin-bottom: 25px;
+  padding-top: 0;
+}
+.feedback .feedback_container .pull-left {
+  float: none !important;
+}
+.feedback .feedback_container textarea {
+  height: 122px;
+}
+.feedback .feedback_container svg.positioned {
+  position: absolute;
+  right: -55px;
+  bottom: -65px;
+  fill: #68170f;
+}
+.feedback .feedback_container svg.positioned .st0 {
+  fill: #fff;
+  stroke: none;
+}
+.feedback .feedback_container svg.positioned .st1 {
+  fill: #68170f;
+}
+/*========CONTACTS=======*/
+.contacts h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 40px;
+}
+.contacts .contact_container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.contacts .contact_container .title {
+  text-align: center;
+  color: black;
+  font-family: 'Rubik';
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+  margin-bottom: 45px;
+}
+.contacts .contact_container .items_set {
+  margin-bottom: 14px;
+}
+.contacts .contact_container .items_set:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  display: block;
+}
+.contacts .contact_container .item {
+  margin-bottom: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-right: 15px;
+  color: #333;
+  font-family: 'Rubik';
+  font-size: 18px;
+  font-weight: 400;
+}
+.contacts .contact_container .item .icon {
+  margin-right: 10px;
+  padding-top: 2px;
+}
+.contacts .contact_container .item .icon svg {
+  margin-right: 25px;
+  fill: #68170f;
+}
+.contacts .contact_container .item .text {
+  line-height: 30px;
+}
+.contacts .map {
+  height: 377px;
+}
+/*========VAKANSY=======*/
+.vakansy h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 40px;
+}
+.vakansy .show_filter {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.vakansy .vakansy_filter {
+  display: none;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 58px;
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 2;
+  margin-left: -15px;
+}
+.vakansy .vakansy_filter .go_back {
+  color: #108408;
+  text-decoration: none;
+  font-family: 'Rubik';
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 35px;
+  display: inline-block;
+  vertical-align: top;
+}
+.vakansy .vakansy_filter .go_back svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  margin-top: -1px;
+  transform: rotate(180deg);
+}
+.vakansy .vakansy_filter .go_back svg .st0 {
+  fill: #108408;
+  stroke: none;
+}
+.vakansy .vakansy_filter .go_back svg .hover {
+  display: none;
+}
+.vakansy .vakansy_filter .go_back:hover {
+  color: #68170f;
+}
+.vakansy .vakansy_filter .go_back:hover svg .st0 {
+  display: none;
+}
+.vakansy .vakansy_filter .go_back:hover svg .hover {
+  display: block;
+}
+.vakansy .vakansy_filter .go_back:hover svg .hover .st1 {
+  fill: #68170f;
+  stroke: none;
+}
+.vakansy .vakansy_filter input[type=submit] {
+  width: 100%;
+}
+.vakansy .vakansy_filter label {
+  display: block;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.vakansy .vakansy_filter .checkbox:checked + label,
+.vakansy .vakansy_filter .radio:checked + label {
+  color: black;
+}
+.vakansy .vakansy_filter .title {
+  color: black;
+  font-family: 'Rubik';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 13px;
+}
+.vakansy .vakansy_filter .js_select {
+  margin-bottom: 15px;
+}
+.vakansy .vakansy_filter .filter_item {
+  margin-bottom: 25px;
+}
+.vakansy .vakansy_filter .border {
+  height: 1px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f5dddb;
+}
+.vakansy .vakansy_list .search_reslut {
+  color: #666;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.vakansy .vakansy_list .item {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: all 0.5s;
+}
+.vakansy .vakansy_list .item:hover {
+  box-shadow: 0 15px 33px rgba(0, 0, 0, 0.3);
+}
+.vakansy .vakansy_list .item .container-fluid {
+  padding: 0;
+}
+.vakansy .vakansy_list .item .row {
+  padding: 25px;
+}
+.vakansy .vakansy_list .item .title a {
+  text-decoration: none;
+  color: #108408;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.vakansy .vakansy_list .item .price {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+.vakansy .vakansy_list .item .desc {
+  color: #666;
+  font-family: "Fira";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.vakansy .vakansy_list .item .city {
+  color: #999;
+  font-size: 14px;
+  line-height: 20px;
+}
+.vakansy .vakansy_list .item .logo a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  justify-content: center;
+}
+.vakansy .vakansy_list .item .logo img {
+  max-width: 98px;
+}
+.vakancy_full .all_news {
+  margin-bottom: 11px;
+}
+.vakancy_full h1 {
+  margin-bottom: 26px;
+}
+.vakancy_full .vakansy_params {
+  margin-left: 0;
+  margin-right: 0;
+  font-family: 'Rubik';
+  margin-bottom: 38px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 13px;
+  padding-bottom: 18px;
+}
+.vakancy_full .vakansy_params .title {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 9px;
+}
+.vakancy_full .vakansy_params .text {
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.vakancy_full .vakansy_params > div {
+  padding-left: 25px;
+  margin-bottom: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.vakancy_full .vakansy_params div:last-child:after {
+  display: none;
+}
+.vakancy_full .vakansy_params .logo img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.vakancy_full .vakansy_container {
+  font-family: "Fira Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #333;
+  padding-bottom: 24px;
+}
+.vakancy_full .vakansy_container p {
+  margin-bottom: 15px;
+}
+.vakancy_full .vakansy_container h3 {
+  color: black;
+  font-family: Rubik;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.vakancy_full .vakansy_container .map_vakansy {
+  height: 550px;
+}
 /*========SUBSCRIBE=======*/
 .subscribe {
   margin-left: 15px;
@@ -1758,6 +2508,130 @@ footer .social_buttons .social_list a:hover svg .st1 {
 }
 .subscribe form input[type=submit] {
   width: 245px;
+}
+.scroll-wrapper {
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: relative;
+}
+.scroll-wrapper > .scroll-content {
+  border: none !important;
+  box-sizing: content-box !important;
+  height: auto;
+  left: 0;
+  margin: 0;
+  max-height: none;
+  max-width: none !important;
+  overflow: scroll !important;
+  padding: 0;
+  position: relative !important;
+  top: 0;
+  width: auto !important;
+}
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+.scroll-element {
+  display: none;
+}
+.scroll-element,
+.scroll-element div {
+  box-sizing: content-box;
+}
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+  display: block;
+}
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+  cursor: default;
+}
+.scroll-textarea {
+  border: 1px solid #cccccc;
+  border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+  overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+  border: none !important;
+  box-sizing: border-box;
+  height: 100% !important;
+  margin: 0;
+  max-height: none !important;
+  max-width: none !important;
+  overflow: scroll !important;
+  outline: none;
+  padding: 2px;
+  position: relative !important;
+  top: 0;
+  width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+.scrollbar-inner > .scroll-element,
+.scrollbar-inner > .scroll-element div {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+}
+.scrollbar-inner > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.scrollbar-inner > .scroll-element.scroll-x {
+  bottom: 2px;
+  height: 8px;
+  left: 0;
+  width: 100%;
+}
+.scrollbar-inner > .scroll-element.scroll-y {
+  height: 100%;
+  right: 0px;
+  top: 0;
+  width: 12px;
+}
+.scrollbar-inner > .scroll-element .scroll-element_outer {
+  overflow: hidden;
+}
+.scrollbar-inner > .scroll-element .scroll-bar {
+  width: 6px;
+  border-radius: 3px;
+  left: 3px;
+  opacity: 0.9;
+}
+.scrollbar-inner > .scroll-element .scroll-element_track {
+  background-color: #fff;
+}
+.scrollbar-inner > .scroll-element .scroll-bar {
+  background-color: #51b24a;
+}
+.scrollbar-inner > .scroll-element:hover .scroll-bar {
+  background-color: #919191;
+}
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar {
+  background-color: #919191;
+}
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+  left: -12px;
+}
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+  top: -12px;
+}
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -12px;
+}
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -12px;
 }
 @media (max-width: 768px) {
   .button_up {
@@ -2262,6 +3136,195 @@ footer .social_buttons .social_list a:hover svg .st1 {
   .discounts_full .discounts_content .description {
     line-height: 25px;
     font-size: 16px;
+  }
+  .get_stores .filter_stores {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+  }
+  .get_stores .search_city {
+    position: absolute;
+    z-index: 2;
+    left: 25px;
+    top: 25px;
+    width: 263px;
+  }
+  .get_stores .stores_container,
+  .get_stores .stores_map {
+    height: 563px;
+  }
+  .get_stores .select_all_cat {
+    margin-top: 8px;
+  }
+  .get_stores .stores_list {
+    overflow: hidden;
+    height: 563px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  }
+  .get_stores .stores_list li {
+    background: #108408;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Rubik';
+    line-height: 22px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 15px;
+    min-height: 267px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .get_stores .stores_list li:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-top: 24px solid #000000;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+  }
+  .get_stores .stores_list li img {
+    display: none;
+  }
+  .get_stores .stores_list li .items_set {
+    margin-bottom: 14px;
+  }
+  .get_stores .stores_list li .items_set:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    display: block;
+  }
+  .get_stores .stores_list li .item {
+    margin-bottom: 14px;
+    display: flex;
+    flex-flow: row nowrap;
+    padding-right: 15px;
+  }
+  .get_stores .stores_list li .item .icon {
+    margin-right: 10px;
+    width: 16px;
+    padding-top: 2px;
+  }
+  .get_stores .stores_list li .item .icon svg {
+    width: 16px;
+    fill: #fff;
+    height: auto;
+  }
+  .get_stores .stores_list li .icon_set {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .get_stores .stores_list li .icon_set svg {
+    margin-right: 30px;
+    width: 24px;
+    height: auto;
+    margin-bottom: 18px;
+    fill: black;
+  }
+  .get_stores .stores_list li .more_link {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  .get_stores .stores_list li:nth-child(odd) {
+    background: #198c11;
+  }
+  .get_stores .stores_list li.active {
+    position: relative;
+    z-index: 2;
+    background: #3eaa36;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  }
+  .feedback {
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    background: url(../img/bg_feedback.jpg) center no-repeat;
+    background-size: cover;
+    padding-top: 109px;
+    padding-bottom: 168px;
+  }
+  .feedback .feedback_container {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding-bottom: 35px;
+  }
+  .feedback .feedback_container input[type=submit] {
+    width: 165px;
+  }
+  .feedback .feedback_container h2 {
+    padding-top: 30px;
+    margin-bottom: 50px;
+  }
+  .feedback .feedback_container .pull-left {
+    float: left !important;
+  }
+  .contacts .contact_container .title {
+    text-align: left;
+  }
+  .vakansy .vakansy_filter {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 28px;
+    display: block !important;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    height: auto;
+  }
+  .vakansy .vakansy_list .search_reslut {
+    text-align: left;
+  }
+  .vakancy_full .vakansy_params {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+  .vakancy_full .vakansy_params > div {
+    text-align: left;
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .vakancy_full .vakansy_params > div:after {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    content: '';
+    display: inline-block;
+    vertical-align: top;
+    width: 1px;
+    height: 100%;
+    background-color: #f5dddb;
+    border-radius: 1px;
+  }
+  .vakancy_full .vakansy_params div:last-child:after {
+    display: none;
+  }
+  .vakancy_full .vakansy_container .map_vakansy {
+    height: 550px;
+  }
+  .recepts_full .recepts_content h1 {
+    font-size: 40px;
+    line-height: 42px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+  .recepts_full .recepts_content .repect_ingridients .button {
+    width: 360px;
+  }
+  .recepts_full .recepts_content .repect_ingridients ul li {
+    width: 50%;
   }
 }
 @media (min-width: 992px) {
