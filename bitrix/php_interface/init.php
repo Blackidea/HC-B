@@ -8,7 +8,30 @@ function FunctionName(params)
 	//code
 }
 */
+ 
+ 
 class holiday{
+   
+    
+    static function getAllData($hlblock){
+    
+        if (isset($hlblock['ID'])){
+        $arValues = array();
+        $entity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hlblock);
+        $entity_data_class = $entity->getDataClass();       
+        
+        $rsPropEnums = $entity_data_class::getList();
+            while ($arEnum = $rsPropEnums->fetch()) {
+            
+               $arValues[] = $arEnum;
+                
+            }  
+        }
+        else{
+            echo "HL data is not defined!";
+        }
+        return $arValues;
+    }
     static function  getHload($table_name){
         //$arOneSKU = $arResult['DISPLAY_PROPERTIES']['COLOR'];
         $hlblock = \Bitrix\Highloadblock\HighloadBlockTable::getList(
@@ -33,6 +56,18 @@ class holiday{
         }
         
     return $arValues;
+    }
+    static function getVacanciesCount(){
+        CModule::IncludeModule('iblock');
+        $count = 0;
+        $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM");
+        $arFilter = Array("IBLOCK_ID"=>IntVal("18"), "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
+        $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+        while($ob = $res->GetNextElement())
+        {
+            $count++;
+        }
+    return $count;
     }
 }
 

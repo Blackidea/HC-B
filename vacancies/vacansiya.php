@@ -7,8 +7,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Вакансия");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
-	"",
-	Array(
+	"vacansiya",
+	Array( 
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -31,7 +31,7 @@ $APPLICATION->SetTitle("Вакансия");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => "",
 		"ELEMENT_ID" => $_REQUEST["ID"],
-		"FIELD_CODE" => array("",""),
+		"FIELD_CODE" => array("DATE_CREATE",""),
 		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "vacancies",
 		"IBLOCK_URL" => "#IBLOCK_CODE#",

@@ -2,6 +2,20 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 ?>
 <?
+
+  //$req = false; // изначально переменна€ дл€ "ответа" - false
+  // ѕриведЄм полученную информацию в удобочитаемый вид
+  //ob_start();
+//  echo '<pre>';
+//  print_r($_POST);
+//  echo '</pre>';
+  
+  //$req = ob_get_contents();
+  //ob_end_clean();
+  ///echo json_encode($req); // вернем полученное в ответе
+//  exit;
+?>
+<?
 //print_r($_FILES);
 //print_r($_POST);
 

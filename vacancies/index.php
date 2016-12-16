@@ -2,12 +2,100 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Вакансии");
 ?><?
-GLOBAL $arrFilter;
-if (!is_array($arrFilter))
-   $arrFilter = array();
-//$arrFilter['!PROPERTY_inrotation'] = false;
+if (!CModule::IncludeModule('highloadblock')) {
+    echo 'highloadblock module not found';
+    die();
+}
+use Bitrix\Highloadblock as HL;
+use Bitrix\Main\Entity;
+
+//$arFilter = array(
+//    "IBLOCK_ID" => $IBLOCK_ID,
+//    "SECTION_CODE" => "orange",
+//    "INCLUDE_SUBSECTIONS" => "Y",
+//    array(
+//        "LOGIC" => "OR",
+//        array("<PROPERTY_RADIUS" => 50, "=PROPERTY_CONDITION" => "Y"),
+//        array(">=PROPERTY_RADIUS" => 50, "!=PROPERTY_CONDITION" => "Y"),
+//    ),
+//);
+
+
+
+
 
 ?>
+<?
+
+$hlArray = holiday::getHload('b_hlbd_cityvacancy');
+$cities = holiday::getAllData($hlArray);
+$hlArray = holiday::getHload('b_hlbd_shop');
+$shops = holiday::getAllData($hlArray);
+$hlArray = holiday::getHload('b_hlbd_prof');
+$profs = holiday::getAllData($hlArray);
+//print_r($profs);
+$hlArray = holiday::getHload('b_hlbd_urovenzarplaty');
+$zp = holiday::getAllData($hlArray);
+$hlArray = holiday::getHload('b_hlbd_grafik');
+$grafik = holiday::getAllData($hlArray);
+
+
+GLOBAL $arrFilter;
+if (!is_array($arrFilter))
+   $arrFilter = array("LOGIC" => "AND");
+   $props=array();
+   if($_GET['city_select']!=""){
+    $props["PROPERTY_CITY"]=$_GET['city_select'];
+   }
+   if($_GET['store_select']!=""){
+    $props["PROPERTY_SHOP"]=$_GET['store_select'];
+   }
+   if($_GET['zarplata']!=""){
+   
+    $props["PROPERTY_PAY_LEVEL"]=$_GET['zarplata'];
+   }
+   $arrFilter[]=$props;
+   
+   $filter_grafik = array("LOGIC" => "OR");
+   foreach($grafik as $index=>$value){
+       if($_GET['grafik_'.$index.'']!=""){
+            array_push ($filter_grafik, array('PROPERTY_GRAFIK'=> $_GET['grafik_'.$index.''])); 
+       }
+   }
+   
+  $filter_profs = array("LOGIC" => "OR");
+  foreach($profs as $index=>$value){
+       if($_GET['prof_'.$index.'']!=""){
+            array_push ($filter_profs, array('PROPERTY_PROF'=> $_GET['prof_'.$index.''])); 
+       }
+   }
+  
+GLOBAL $arrFilter2;
+
+$arrFilter2 = 
+        array('ACTIVE' => 'Y');
+
+array_push ($arrFilter2, $filter_grafik);
+
+array_push ($arrFilter2, $filter_profs);
+/*
+echo "<pre>";
+print_r($arrFilter2);
+echo "</pre>";
+
+echo "<pre>";
+print_r($arrFilter);
+echo "</pre>";
+
+*/
+
+array_push($arrFilter2 , $arrFilter);
+/*echo "<pre>";
+print_r($arrFilter2);
+echo "</pre>";
+*/
+?>
+
 <!-- VAKANSY -->
 		<section class="vakansy">
 			<div class="container">
@@ -38,69 +126,64 @@ if (!is_array($arrFilter))
 								</svg>
 								<span>Назад</span>
 							</a>
-							<form action="">
+							<form action="/vacancies/index.php" method="GET">
 								<div class="filter_item">
 									<div class="title">Город</div>
 									<select data-select name="city_select">
-										<option value="">Новосибирск</option>
-										<option value="">Новосибирск</option>
-										<option value="">Новосибирск</option>
+                                        <?foreach($cities as $index=>$cityData):?>
+										  <option 
+                                          <?if($cityData['UF_XML_ID']==$_GET['city_select']):?>
+                                           selected
+                                          <?endif;?>
+                                          value="<?=$cityData['UF_XML_ID'];?>"><?=$cityData['UF_NAME'];?></option>
+                                        <?endforeach;?>
+										
 									</select>
 								</div>
 								<div class="filter_item">
 									<div class="title">Выбрать магазин</div>
 									<select data-select name="store_select">
-										<option value="">Холидей</option>
-										<option value="">Холидей</option>
-										<option value="">Холидей</option>
+                                    
+                                    <?foreach($shops as $index=>$shopData):?>
+										<option 
+                                        <?if($shopData['UF_XML_ID']==$_GET['store_select']):?>
+                                           selected
+                                         <?endif;?>
+                                        value="<?=$shopData['UF_XML_ID'];?>"><?=$shopData['UF_NAME'];?></option>
+									 <?endforeach;?>	
 									</select>
 								</div>
 								<div class="filter_item">
-									<div class="title">Профобласть</div>
-									<input type="checkbox" class="checkbox" name="prof_1" id="prof_1" value="">
-									<label for="prof_1">Продажи</label>
-									<input type="checkbox" class="checkbox" name="prof_2" id="prof_2" value="">
-									<label for="prof_2">Начало карьеры</label>
-									<input type="checkbox" class="checkbox" name="prof_3" id="prof_3" value="">
-									<label for="prof_3">Бухгалтерия</label>
-									<input type="checkbox" class="checkbox" name="prof_4" id="prof_4" value="">
-									<label for="prof_4">Консультирование</label>
-									<input type="checkbox" class="checkbox" name="prof_5" id="prof_5" value="">
-									<label for="prof_5">IT, телеком</label>
-									<input type="checkbox" class="checkbox" name="prof_6" id="prof_6" value="">
-									<label for="prof_6">Спорт, фитнес</label>
-									<input type="checkbox" class="checkbox" name="prof_7" id="prof_7" value="">
-									<label for="prof_7">Авто</label>
-									<input type="checkbox" class="checkbox" name="prof_8" id="prof_8" value="">
-									<label for="prof_8">Маркетинг</label>
-									<input type="checkbox" class="checkbox" name="prof_9" id="prof_9" value="">
-									<label for="prof_9">Туризм, рестораны</label>
+                                    <div class="title">Профобласть</div>
+                                     <?foreach($profs as $index=>$profsData):?>
+								       <input 
+                                       <?if($profsData['UF_XML_ID']==$_GET['prof']):?>
+                                           checked
+                                       <?endif;?>
+                                       type="checkbox" class="checkbox" name="prof_<?=$index?>" id="prof_<?=$index?>" value="<?=$profsData['UF_XML_ID'];?>">
+									   <label for="prof_<?=$index?>"><?=$profsData['UF_NAME'];?></label>
+									 <?endforeach;?>
+									
+									
+									
 								</div>
 								<div class="filter_item">
 									<div class="title">Зарплата</div>
-									<input type="radio" class="radio" name="zarplata" id="zp_1" value="">
-									<label for="zp_1">от 3000 руб.</label>
-									<input type="radio" class="radio" name="zarplata" id="zp_2" value="">
-									<label for="zp_2">от 20000 руб.</label>
-									<input type="radio" class="radio" name="zarplata" id="zp_3" value="">
-									<label for="zp_3">от 30000 руб.</label>
-									<input type="radio" class="radio" name="zarplata" id="zp_4" value="">
-									<label for="zp_4">от 40000 руб.</label>
-									<input type="radio" class="radio" name="zarplata" id="zp_5" value="">
-									<label for="zp_5">от 50000 руб.</label>
+                                    <?foreach($zp as $index=>$zpData):?>
+								       <input
+                                       <?if($zpData['UF_XML_ID']==$_GET['zarplata']):?>
+                                           checked
+                                       <?endif;?>
+                                        type="radio" class="radio" name="zarplata" id="zp_<?=$index?>" value="<?=$zpData['UF_XML_ID'];?>">
+									   <label for="zp_<?=$index?>"><?=$zpData['UF_NAME'];?></label>
+								    <?endforeach;?>									
 								</div>
 								<div class="filter_item nopadding">
 									<div class="title">График работы</div>
-									<input type="checkbox" class="checkbox" name="graf_1" id="graf_1" value="">
-									<label for="graf_1">Сменный график</label>
-									<input type="checkbox" class="checkbox" name="graf_2" id="graf_2" value="">
-									<label for="graf_2">Полный день</label>
-									<input type="checkbox" class="checkbox" name="graf_3" id="graf_3" value="">
-									<label for="graf_3">Гибкий график</label>
-									<input type="checkbox" class="checkbox" name="graf_4" id="graf_4" value="">
-									<label for="graf_4">Вахтовый метод</label>
-									<input type="checkbox" class="checkbox" name="graf_5" id="graf_5" value="">
-									<label for="graf_5">Удаленная работа</label>
+                                    <?foreach($grafik as $index=>$grafikData):?>
+								       <input type="checkbox" class="checkbox" name="grafik_<?=$index?>" id="graf_<?=$index?>" value="<?=$grafikData['UF_XML_ID'];?>">
+									   <label for="graf_<?=$index?>"><?=$grafikData['UF_NAME'];?></label>
+								    <?endforeach;?>										
 								</div>
 								<div class="border"></div>
 								<input type="submit" value="Подобрать">
@@ -109,7 +192,8 @@ if (!is_array($arrFilter))
 					</div>
                     <div class="col-sm-8 col-md-9">
 						<div class="vakansy_list">
-							<div class="search_reslut">Найдено 124 вакансии</div>
+                        <?$vacanciesCount = holiday::getVacanciesCount();?>
+							
                             <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"vacancies", 
@@ -139,7 +223,7 @@ if (!is_array($arrFilter))
 			2 => "DATE_CREATE",
 			3 => "",
 		),
-		"FILTER_NAME" => "arrFilter",
+		"FILTER_NAME" => "arrFilter2",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "vacancies",
@@ -159,7 +243,8 @@ if (!is_array($arrFilter))
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
 			0 => "city",
-			1 => "",
+			1 => "shop",
+			2 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
