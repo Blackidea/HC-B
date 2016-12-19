@@ -9,35 +9,21 @@ if (!CModule::IncludeModule('highloadblock')) {
 use Bitrix\Highloadblock as HL;
 use Bitrix\Main\Entity;
 
-//$arFilter = array(
-//    "IBLOCK_ID" => $IBLOCK_ID,
-//    "SECTION_CODE" => "orange",
-//    "INCLUDE_SUBSECTIONS" => "Y",
-//    array(
-//        "LOGIC" => "OR",
-//        array("<PROPERTY_RADIUS" => 50, "=PROPERTY_CONDITION" => "Y"),
-//        array(">=PROPERTY_RADIUS" => 50, "!=PROPERTY_CONDITION" => "Y"),
-//    ),
-//);
-
-
-
-
-
-?>
-<?
 
 $hlArray = holiday::getHload('b_hlbd_cityvacancy');
-$cities = holiday::getAllData($hlArray);
+$cities  = holiday::getAllData($hlArray);
+
 $hlArray = holiday::getHload('b_hlbd_shop');
-$shops = holiday::getAllData($hlArray);
+$shops   = holiday::getAllData($hlArray);
+
 $hlArray = holiday::getHload('b_hlbd_prof');
-$profs = holiday::getAllData($hlArray);
-//print_r($profs);
+$profs   = holiday::getAllData($hlArray);
+
 $hlArray = holiday::getHload('b_hlbd_urovenzarplaty');
-$zp = holiday::getAllData($hlArray);
+$zp      = holiday::getAllData($hlArray);
+
 $hlArray = holiday::getHload('b_hlbd_grafik');
-$grafik = holiday::getAllData($hlArray);
+$grafik  = holiday::getAllData($hlArray);
 
 
 GLOBAL $arrFilter;
@@ -78,22 +64,9 @@ $arrFilter2 =
 array_push ($arrFilter2, $filter_grafik);
 
 array_push ($arrFilter2, $filter_profs);
-/*
-echo "<pre>";
-print_r($arrFilter2);
-echo "</pre>";
-
-echo "<pre>";
-print_r($arrFilter);
-echo "</pre>";
-
-*/
 
 array_push($arrFilter2 , $arrFilter);
-/*echo "<pre>";
-print_r($arrFilter2);
-echo "</pre>";
-*/
+
 ?>
 
 <!-- VAKANSY -->

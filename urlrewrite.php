@@ -35,6 +35,11 @@ $arUrlRewrite = array(
 		"RULE" => "ID=\$1",
 		"PATH" => "/vacancies/vacansiya.php",
 	),
+    array(
+		"CONDITION" => "#^/recipes/([0-9]+)/#",
+		"RULE" => "ID=\$1",
+		"PATH" => "/recipes/recipe.php",
+	),
 	array(
 		"CONDITION" => "#^/communication/blog/#",
 		"RULE" => "",

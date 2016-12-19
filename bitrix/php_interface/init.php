@@ -32,6 +32,19 @@ class holiday{
         }
         return $arValues;
     }
+    static function getDurations(){
+        CModule::IncludeModule('iblock');
+        $result = array();
+        $count = 0;
+        $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM","PROPERTY_DURATION");
+        $arFilter = Array("IBLOCK_ID"=>IntVal("19"), "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
+        $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+        while($ob = $res->GetNextElement())
+        {
+          array_push($result, $ob->fields['PROPERTY_DURATION_VALUE']);
+        }
+    return $result;
+    }
     static function  getHload($table_name){
         //$arOneSKU = $arResult['DISPLAY_PROPERTIES']['COLOR'];
         $hlblock = \Bitrix\Highloadblock\HighloadBlockTable::getList(

@@ -94,7 +94,7 @@ $this->setFrameMode(true);
                 $APPLICATION->GetTemplatePath("").
                 require($_SERVER["DOCUMENT_ROOT"]."/".$APPLICATION->GetTemplatePath("")."/components/bitrix/form/vacancy/bitrix/form.result.new/.default/ajax.js");?>
                 <div class="feedback-form-wrapper">
-                    <? $APPLICATION->IncludeComponent("bitrix:form", "", Array(
+                    <? $APPLICATION->IncludeComponent("bitrix:form", "vacancy", Array(
                     	"AJAX_MODE" => "N",	// Включить режим AJAX
                     		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
                     		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
