@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Адреса магазинов", 
-		"/shops/", 
+		"/stores/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -37,7 +37,11 @@ $this->setFrameMode(true);?>
 </div>
 
 <?if(count($arResult["ITEMS"])>0)
-{?>
+{
+    $my_cout = count($arResult["ITEMS"]);
+    
+    $_POST['my_count'] = $my_cout;
+    ?>
 
 
 

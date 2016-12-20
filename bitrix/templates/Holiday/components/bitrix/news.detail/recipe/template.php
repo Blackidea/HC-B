@@ -11,8 +11,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-?>
-<?
+
+//print_r($arResult["DISPLAY_PROPERTIES"]);
+
 //echo "<pre>";
 //print_r($arResult);
 //echo "</pre>";
@@ -114,7 +115,7 @@ $this->setFrameMode(true);
 									<span><?=$arResult["DISPLAY_PROPERTIES"]["duration"]["VALUE"]?> мин.</span>
 								</div>
 								<div class="recept_category">
-									<span>Кухня: <?=$arResult["DISPLAY_PROPERTIES"]["type"]["VALUE"]?></span>
+									<span>Кухня: <?=$arResult["DISPLAY_PROPERTIES"]["type"]["DISPLAY_VALUE"]?></span>
 								</div>
 							</div>
 							<img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" class="img-full" alt="<?=$arResult["NAME"]?>" title="<?=$arResult["NAME"]?>">
