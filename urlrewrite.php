@@ -19,26 +19,16 @@ $arUrlRewrite = array(
 		"PATH" => "/e-store/books/reviews/index.php",
 	),
 	array(
-		"CONDITION" => "#^/communication/forum/#",
-		"RULE" => "",
-		"ID" => "bitrix:forum",
-		"PATH" => "/communication/forum/index.php",
-	),
-	array(
 		"CONDITION" => "#^/e-store/xml_catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/e-store/xml_catalog/index.php",
 	),
 	array(
-		"CONDITION" => "#^/vacancies/([0-9]+)/#",
-		"RULE" => "ID=\$1",
-		"PATH" => "/vacancies/vacansiya.php",
-	),
-    array(
-		"CONDITION" => "#^/recipes/([0-9]+)/#",
-		"RULE" => "ID=\$1",
-		"PATH" => "/recipes/recipe.php",
+		"CONDITION" => "#^/communication/forum/#",
+		"RULE" => "",
+		"ID" => "bitrix:forum",
+		"PATH" => "/communication/forum/index.php",
 	),
 	array(
 		"CONDITION" => "#^/communication/blog/#",
@@ -47,10 +37,20 @@ $arUrlRewrite = array(
 		"PATH" => "/communication/blog/index.php",
 	),
 	array(
+		"CONDITION" => "#^/vacancies/([0-9]+)/#",
+		"RULE" => "ID=\$1",
+		"PATH" => "/vacancies/vacansiya.php",
+	),
+	array(
 		"CONDITION" => "#^/content/articles/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/content/articles/index.php",
+	),
+	array(
+		"CONDITION" => "#^/recipes/([0-9]+)/#",
+		"RULE" => "ID=\$1",
+		"PATH" => "/recipes/recipe.php",
 	),
 	array(
 		"CONDITION" => "#^/content/gallery/#",
@@ -65,16 +65,16 @@ $arUrlRewrite = array(
 		"PATH" => "/kora/discounts/index.php",
 	),
 	array(
-		"CONDITION" => "#^/content/photo/#",
-		"RULE" => "",
-		"ID" => "bitrix:photogallery",
-		"PATH" => "/content/photo/index.php",
-	),
-	array(
 		"CONDITION" => "#^/e-store/books/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/e-store/books/index.php",
+	),
+	array(
+		"CONDITION" => "#^/content/photo/#",
+		"RULE" => "",
+		"ID" => "bitrix:photogallery",
+		"PATH" => "/content/photo/index.php",
 	),
 	array(
 		"CONDITION" => "#^/content/news/#",
@@ -93,6 +93,12 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/discount/index.php",
+	),
+	array(
+		"CONDITION" => "#^/stories/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/stories/index.php",
 	),
 	array(
 		"CONDITION" => "#^/news/#",
