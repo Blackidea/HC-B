@@ -714,6 +714,7 @@
 				justify-content: center;
 				padding-top: 4px;
 				padding-bottom: 4px;
+				margin-bottom: 0;
 				&:after{
 					position: absolute;
 					right: 0;
@@ -739,6 +740,26 @@
 			}
 		}
 	}
+	.about{
+		.about_conteiner{
+			.service_list{
+				li{
+					display: flex;
+					flex-flow:row nowrap;
+					margin-bottom: 40px;
+					.icon{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.player{
+		height: 580px;
+		video{
+			height: 580px;
+		}
+	}
 	.recepts_full{
 		.recepts_content{
 			h1{
@@ -759,8 +780,137 @@
 			}
 		}
 	}
+	.discounts_card{
+		.discounts_card_content{
+			.card_info{
+				flex-flow: row nowrap;
+				.icon{
+					margin-bottom: 0;
+					min-width: 124px;
+					height: 124px;
+					svg{
+						width: 61px;
+						height: 65px;
+					}
+				}
+				.text{
+					padding-left: 40px;
+				}
+			}
+		}
+	}
+	.history{
+		.history_list{
+			.item{
+				.image{
+					height: 193px;
+				}
+			}
+		}
+	}
+	.history_full{
+		.history_content{
+			h1{
+				font-size: 40px;
+				line-height: 50px;
+			}
+		}
+	}
+	.page_date{
+		.page_date_conteiner{
+			.date_list{
+				&:before{
+					content: '';
+					position: absolute;
+					left: 28px;
+					top: 0;
+					height: 100%;
+					width: 3px;
+					background-color: #f5dddb;
+				}
+				li{
+					display: flex;
+					flex-flow:row nowrap;
+					align-items: flex-start;
+					.year{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.catalog{
+		.catalog_bar{
+			padding-left: 30px;
+			padding-right: 30px;
+			margin-top: 0;
+			background-color: white;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.catalog_middle{
+			position: relative;
+			margin-top: 0;
+		}
+		.catalog_list{
+			padding-left: 15px;
+			padding-right: 15px;
+			.item{
+				img{
+					width: 50%;
+					&:first-child{
+						float: left;
+						display: block;
+					}
+					&:last-child{
+						float: right;
+					}
+				}
+			}
+		}
+	}
 }
 @media (min-width: 992px) {
+	.catalog{
+		.catalog_slider{
+			.arrow_left{
+				display: block;
+			}
+			.arrow_right{
+				display: block;
+			}
+			.items_container{
+				width: 786px;
+				height: 612px;
+			}
+			.items{
+				height: 612px;
+				.shadow_right{
+					.item_shadow{
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						left: 0;
+						top: 0;
+						z-index: 9999;
+						box-shadow:inset -7px -1px 9px 0px rgba(50, 50, 50, 0.35);
+					}
+				}
+				.shadow_left{
+					.item_shadow{
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						left: 0;
+						top: 0;
+						z-index: 9999;
+						box-shadow:inset 7px -1px 9px 0px rgba(50, 50, 50, 0.35);
+					}
+				}
+			}
+		}
+	}
 	header{
 		.user_block{
 			padding-left: 0;
@@ -963,6 +1113,24 @@
 	}
 }
 @media (min-width: 1560px) {
+	.history{
+		.history_list{
+			.item{
+				.image{
+					height: 260px;
+				}
+			}
+		}
+	}
+	.history_full{
+		.history_list{
+			.item{
+				.image{
+					height: 200px;
+				}
+			}
+		}
+	}
 	header{
 		.stores{
 			li{
