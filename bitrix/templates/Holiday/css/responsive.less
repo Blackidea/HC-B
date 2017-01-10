@@ -6,7 +6,7 @@
 @color_gray: #d0ccc5;
 @media (max-width: 768px) {
 	.button_up{
-		display: none !important;
+		//display: none !important;
 	}
 }
 @media (min-width: 768px) {
@@ -433,34 +433,6 @@
 			}
 		}
 	}
-	.button_up{
-		display: none;
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		margin-right: 30px;
-		width: 67px;
-		height: 28px;
-		background-color: @color_orange;
-		border-radius: 3px 3px 0px 0px;
-		line-height: 28px;
-		text-align: center;
-		z-index: 9999;
-		cursor: pointer;
-		svg{
-			display: inline-block;
-			vertical-align: middle;
-			width: 19px;
-			height: 11px;
-			transform:rotate(180deg);
-			.st0{
-				stroke: #fff;
-			}
-		}
-		&:hover{
-			background-color: @color_red
-		}
-	}
 	.created_box{
 		font-size: 13px;
 		.logo_blackedia{
@@ -507,7 +479,7 @@
 		form{
 			flex-flow:row nowrap;
 			input[type=text]{
-				width: 555px;
+				width: 325px;
 				box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 				margin-bottom: 0;
 			}
@@ -556,6 +528,7 @@
 			z-index: 2;
 			left: 25px;
 			top: 25px;
+			font-size: 14px;
 			width: 263px;
 		}
 		.stores_container, .stores_map{
@@ -660,7 +633,8 @@
 		padding-top: 109px;
 		padding-bottom: 168px;
 		.feedback_container{
-			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+			max-width: 710px;
+			box-shadow: 0 15px 12px rgba(0, 0, 0, 0.3);
 			padding-bottom: 35px;
 			input[type=submit]{
 				width: 165px;
@@ -676,6 +650,8 @@
 	}
 	.contacts{
 		.contact_container{
+			max-width: 405px;
+			margin: auto;
 			.title{
 				text-align: left;
 			}
@@ -868,8 +844,149 @@
 			}
 		}
 	}
+	.buy_list{
+		h2:first-child{
+			font-size: 50px;
+			margin-top: 47px;
+			padding-top: 0;
+			padding-bottom: 40px;
+			margin-bottom: 68px;
+		}
+		.nopadding{
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+		}
+		.category_title{
+			padding-left: 30px;
+			&.color_blue{
+				.icon{
+					svg{
+						width: 51px;
+						height: 45px;
+					}
+				}
+			}
+			.title{
+				font-size: 20px;
+			}
+			.remove{
+				margin-right: 30px;
+			}
+		}
+		.product_options{
+			padding-left: 0;
+			padding-right: 0;
+			.option{
+				flex-flow:row nowrap;
+				margin-bottom: 33px;
+				.field{
+					margin-right: 15px;
+					&.select_field{
+						margin-bottom: 0;
+					}
+					&.num_field{
+						width: 100%;
+						max-width: 135px;
+					}
+					&.desc_field{
+						width: 100%;
+						margin-right: 15px;
+						max-width: 135px;
+					}
+					&.remove_field{
+						display: block;
+					}
+				}
+			}
+		}
+		.add_category{
+			margin-left: 0;
+			margin-right: 0;
+			box-shadow: none;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			.title{
+				margin-left: 0;
+				margin-right: 0;
+				padding-top: 12px;
+				padding-bottom: 12px;
+				border:none;
+				color: @color_red;
+				box-shadow: 0 2px 10px rgba(104, 23, 15, 0.2);
+				justify-content: flex-start;
+				svg{
+					display: block;
+				}
+			}
+			ul.list{
+				height: auto;
+				display: flex;
+				flex-flow:row wrap;
+				margin-left: 0;
+				margin-right: 0;
+				li{
+					width: 50%;
+				}
+			}
+		}
+		.list_items{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+	.recepts_list{
+		.recepts_slider{
+			justify-content: flex-start;
+		}
+		.dropdown_filter{
+			display: block;
+			position: relative;
+		}
+		.filter_recepts{
+			.chekbox_list{
+				border:0;
+				display: flex;
+				flex-flow:row wrap;
+				margin-bottom: 0;
+				.field{
+					width: 100%;
+				}
+			}
+			.js_select{
+				margin-bottom: 0;
+			}
+			input[type=submit]{
+				width: 100%;
+				display: block;
+				margin: auto;
+			}
+		}
+	}
 }
 @media (min-width: 992px) {
+	.feedback{
+		.feedback_container{
+			max-width: 810px;
+		}
+	}
+	.recepts_list{
+		.filter_recepts{
+			.chekbox_list{
+				.field{
+					width: 50%;
+				}
+			}
+		}
+	}
+	.vakansy{
+		.vakansy_list{
+			.item{
+				.logo{
+					display: block;
+				}
+			}
+		}
+	}
 	.catalog{
 		.catalog_slider{
 			.arrow_left{

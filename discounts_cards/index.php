@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Дисконтные карты");
 
 <section class="discounts_card">
 			<div class="container">
-				<h2>Дисконтные карты</h2>
+				<h2><?echo $APPLICATION->GetTitle();?></h2>
 				<div class="discounts_card_content">
 					<div class="card_image">
 						<img src="<?=$APPLICATION->GetTemplatePath("")?>img/pic/card_holiday.png" alt="">

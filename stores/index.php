@@ -2,12 +2,10 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Магазины, Адреса");
 ?>
-<?
- 
-?>
+</div> <!-- close-container -->
 <section class="get_stores">
 			<div class="container-fluid">
-				<h2>Адреса магазинов</h2>
+			 <h2><?echo $APPLICATION->GetTitle();?></h2>
 				<div class="filter_stores row">
 					<div class="col-xs-12 visible-xs">
 						<div class="dropdown_filter">
@@ -341,7 +339,7 @@ $APPLICATION->SetTitle("Магазины, Адреса");
 								<a href="#" class="button">Найти</a>
 							</div>
 						</div>
-						<input type="text" class="search_city" placeholder="Найти магазин рядом">
+				 
 					</div>
 					<div class="hidden-xs col-sm-4 col-md-4 col-lg-2">
 						<div class="item_filter">
@@ -740,64 +738,66 @@ $APPLICATION->SetTitle("Магазины, Адреса");
 							<li class="active">
 								<div class="items_set">
 									<div class="item">
-										<div class="icon"><img src="img/icon_point.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div>
 										<div class="text">г. Новосибирск, <br>пр-т Дзержинского, д. 2/2</div>
 									</div>
 									<div class="item">
-										<div class="icon"><img src="img/icon_phone.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div>
 										<div class="text">8 (908) 545-49-76</div>
 									</div>
 									<div class="item">
-										<div class="icon"><img src="img/icon_map_clock.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div>
 										<div class="text">10 <sup>00</sup> - 23 <sup>00</sup></div>
 									</div>
 								</div>
 								<a class="more_link" href="#">Подробнее</a>
-								<div class="icon_set"><img class="svg" src="img/icon_map_rol.svg" alt=""><img class="svg" src="img/icon_map_traktor.svg" alt=""><img class="svg" src="img/icon_map_mangal.svg" alt=""><img class="svg" src="img/icon_map_cockie.svg" alt=""><img class="svg" src="img/icon_map_lapsha.svg" alt=""><img class="svg" src="img/icon_map_pizza.svg" alt=""><img class="svg" src="img/icon_map_chiken.svg" alt=""><img class="svg" src="img/icon_map_fish.svg" alt=""><img class="svg" src="img/icon_map_bear.svg" alt=""><img class="svg" src="img/icon_map_tort.svg" alt=""></div>
+								<div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div>
 							</li>
 							<li>
 								<div class="items_set">
 									<div class="item">
-										<div class="icon"><img src="img/icon_point.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div>
 										<div class="text">г. Новосибирск, <br>пр-т Дзержинского, д. 2/2</div>
 									</div>
 									<div class="item">
-										<div class="icon"><img src="img/icon_phone.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div>
 										<div class="text">8 (908) 545-49-76</div>
 									</div>
 									<div class="item">
-										<div class="icon"><img src="img/icon_map_clock.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div>
 										<div class="text">10 <sup>00</sup> - 23 <sup>00</sup></div>
 									</div>
 								</div>
 								<a class="more_link" href="#">Подробнее</a>
-								<div class="icon_set"><img class="svg" src="img/icon_map_rol.svg" alt=""><img class="svg" src="img/icon_map_traktor.svg" alt=""><img class="svg" src="img/icon_map_mangal.svg" alt=""><img class="svg" src="img/icon_map_cockie.svg" alt=""><img class="svg" src="img/icon_map_lapsha.svg" alt=""><img class="svg" src="img/icon_map_pizza.svg" alt=""><img class="svg" src="img/icon_map_chiken.svg" alt=""><img class="svg" src="img/icon_map_fish.svg" alt=""><img class="svg" src="img/icon_map_bear.svg" alt=""><img class="svg" src="img/icon_map_tort.svg" alt=""></div>
+								<div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div>
 							</li>
 							<li>
 								<div class="items_set">
 									<div class="item">
-										<div class="icon"><img src="img/icon_point.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_point.svg" alt="" class="svg"></div>
 										<div class="text">г. Новосибирск, <br>пр-т Дзержинского, д. 2/2</div>
 									</div>
 									<div class="item">
-										<div class="icon"><img src="img/icon_phone.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_phone.svg" alt="" class="svg"></div>
 										<div class="text">8 (908) 545-49-76</div>
 									</div>
 									<div class="item">
-										<div class="icon"><img src="img/icon_map_clock.svg" alt="" class="svg"></div>
+										<div class="icon"><img src="/bitrix/templates/Holiday/img/icon_map_clock.svg" alt="" class="svg"></div>
 										<div class="text">10 <sup>00</sup> - 23 <sup>00</sup></div>
 									</div>
 								</div>
 								<a class="more_link" href="#">Подробнее</a>
-								<div class="icon_set"><img class="svg" src="img/icon_map_rol.svg" alt=""><img class="svg" src="img/icon_map_traktor.svg" alt=""><img class="svg" src="img/icon_map_mangal.svg" alt=""><img class="svg" src="img/icon_map_cockie.svg" alt=""><img class="svg" src="img/icon_map_lapsha.svg" alt=""><img class="svg" src="img/icon_map_pizza.svg" alt=""><img class="svg" src="img/icon_map_chiken.svg" alt=""><img class="svg" src="img/icon_map_fish.svg" alt=""><img class="svg" src="img/icon_map_bear.svg" alt=""><img class="svg" src="img/icon_map_tort.svg" alt=""></div>
+								<div class="icon_set"><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_rol.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_traktor.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_mangal.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_cockie.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_lapsha.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_pizza.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_chiken.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_fish.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_bear.svg" alt=""><img class="svg" src="/bitrix/templates/Holiday/img/icon_map_tort.svg" alt=""></div>
 							</li>
 						</ul>
 					</div>
 					<div class="col-sm-8 col-md-8 nopadding">
-						<input type="text" class="search_city hidden-xs" placeholder="Найти магазин рядом">
+						<input type="text" class="search_city hidden-xs" id="search_city" placeholder="Введите ваш город">
 						<div class="stores_map" id="map_filter"></div>
 					</div>
 				</div>
 			</div>
 		</section>
+        
+<div class="container"> <!-- open-container again -->
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -9,7 +9,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Собственное производство", 
-		"develompment/", 
+		"production/", 
 		Array(), 
 		Array(), 
 		"" 

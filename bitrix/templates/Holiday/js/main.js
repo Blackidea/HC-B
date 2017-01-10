@@ -6,6 +6,7 @@
 		document: $(doc),
 		page: $('html, body'),
 		mobile: 768,
+		table: 992,
 		body: $('body'),
 		params: {
 			lazyload: {
@@ -45,6 +46,7 @@
 		},
 		initPage: function(){
 			//SELECT INIT
+
 			$('[data-select]').js_select();
 			if($('.slider_range').length){
 				$(".slider_range").slider({
@@ -54,15 +56,27 @@
 					max: 120,
 					values: [ 0, 120 ],
 					slide: function( event, ui ) {
+						$(this).parent().find('#min_val').val(ui.values[ 0 ])
+						$(this).parent().find('#max_val').val(ui.values[ 1 ])
 						$(this).parent().find('.slider_range_min i').html(ui.values[ 0 ])
 						$(this).parent().find('.slider_range_max i').html(ui.values[ 1 ])
 					}
 				});
 			}
-			
+			if($('.check_ratio').length){
+				$('.check_ratio a').on('click', function(e){
+					e.preventDefault();
+					var t=$(this);
+					$('.check_ratio a').removeClass('active');
+					t.addClass('active');
+					t.parent().find('#ratio_val').val(t.data('ratio'));
+				});
+
+			}
 			//MOBILE BUTTON
 			$(doc).on('click', '.show_filter', function(e){
 				e.preventDefault();
+				alert('1')
 				var t=$(this);
 				t.toggleClass('opened');
 				if(t.hasClass('opened')){
@@ -72,6 +86,26 @@
 					$('.vakansy_filter').slideUp();
 					App.unlock_scroll_body();
 				}
+				
+			});
+			$(doc).on('click','.show_repect_filter', function(e){
+				e.preventDefault();
+				var t=$(this);
+				t.toggleClass('opened');
+				
+				if(t.hasClass('opened')){
+					$('.dropdown_filter').slideDown();
+					App.lock_scroll_body('.dropdown_filter');
+				} else {
+					$('.dropdown_filter').slideUp();
+					App.unlock_scroll_body();
+				}
+			});
+			$(doc).on('click', '.dropdown_filter .go_back', function(e){
+				e.preventDefault();
+				$('.show_repect_filter').removeClass('opened');
+				$('.dropdown_filter').slideUp();
+				App.unlock_scroll_body();
 			});
 			$(doc).on('click', '.vakansy_filter .go_back', function(e){
 				e.preventDefault();
@@ -110,8 +144,16 @@
 			//ADD FILE
 			$('.add_file').click( function(e){
 				e.stopPropagation();
-				$(this).parent().find('input[type=file]').trigger('click')
+				$(this).parent().find('input[type=file]').trigger('click');
 			})
+			$('.add_file').parent().find('input[type=file]').change(function() {
+				var filename = $(this).val();
+				if(filename){
+					$(this).parent().find('.add_file span').html(filename.replace(/C:\\fakepath\\/i, ''));
+				} else {
+					$(this).parent().find('.add_file span').html($(this).parent().find('.add_file').data('mask'));
+				}
+			});
 			//PASSWORD BUTTON
 			$(doc).on('click','.show_password', function(e){
 				e.preventDefault();
@@ -137,7 +179,7 @@
 				$('.popup_window, .shadow_site').hide();
 			});
 			//BUTTON UP START
-			if($(win).width()>App.mobile){
+			//if($(win).width()>App.mobile){
 				if($('.button_up').length){
 					$(doc).on('click', '.button_up', function(e){
 						e.preventDefault();
@@ -165,10 +207,11 @@
 						}, 300)
 					});
 				}
-			}
+			//}
 		},
 		InitHeadSlider: function(){
 			//SLIDER START
+
 			if($('.slider ul').length){
 				$(win).on('resize', function(){
 					var win_height=$(this).height(),
@@ -183,7 +226,7 @@
 						adaptiveHeight: true,
 						onSliderLoad: function(){
 							$('.slider ul').css('overflow', 'visible');
-							if($(win).width()>App.mobile){
+							if($(win).width()>App.table){
 								var $poster = $('.slider .container'),
 									$layer = $('[class*="layer-"]'),
 									w = $(win).width(),
@@ -261,46 +304,59 @@
 							arrow_left.hide()
 						}
 					}
-				})
-				$(win).on('scroll', function(){
-					var scrolltop=$(this).scrollTop(),
-					recepts=$('.recepts_slider .handle'),
-					recepts_top=recepts.offset().top,
-					recepts_height=recepts.outerHeight();
-					//RECEPTS ANIMATION
-					if(scrolltop>(recepts_top-(recepts_height-100))){
-						if(!recepts.hasClass('animated')){
-							recepts.addClass('animated');
+				});
+				if(App.table<$(win).width()){
+					$(win).on('scroll', function(){
+						var scrolltop=$(this).scrollTop(),
+						recepts=$('.recepts_slider .handle'),
+						recepts_top=recepts.offset().top-$(win).height()+140,
+						recepts_height=recepts.outerHeight();
+						console.log(recepts_top+' '+scrolltop);
+						//RECEPTS ANIMATION
+						if(scrolltop>(recepts_top)){
+							if(!recepts.hasClass('animated')){
+								recepts.addClass('animated');
+							}
 						}
-					}
-				})
+					})
+				} else {
+					$('.recepts_slider .handle').addClass('animated');
+				}
 			}
 		},
 		initNumber: function(){
-			$(win).on('scroll', function(){
-				var scrolltop=$(this).scrollTop(),
-				statistic=$('.statistic');
-				if(statistic.length){
-					statistic_top=statistic.offset().top,
-					statistic_height=statistic.outerHeight();
-					//RECEPTS ANIMATION
-					if(scrolltop>(statistic_top-(statistic_height-50))){
-						
-						if(!statistic.hasClass('animated')){
-							$('[data-count]').each(function(index, el) {
-								$(this).animateNumber({ number: $(this).data('count'), duration: 2000, }, 1000);
-							});
-							statistic.addClass('animated')
+			if($('.statistic').length){
+				$(win).on('scroll', function(){
+					var scrolltop=$(this).scrollTop(),
+					statistic=$('.statistic');
+					if(statistic.length){
+						statistic_top=statistic.offset().top-$(win).height()+140,
+						statistic_height=statistic.outerHeight();
+						//RECEPTS ANIMATION
+						if(scrolltop>(statistic_top)){
+							
+							if(!statistic.hasClass('animated')){
+								$('[data-count]').each(function(index, el) {
+									$(this).animateNumber({ number: $(this).data('count'), duration: 2000, }, 1000);
+								});
+								statistic.addClass('animated')
+							}
 						}
 					}
-				}
-			});
-			$(win).on('load', function(){
-				$('.about .statistic, .page_date .statistic').addClass('animated');
-				$('[data-count]').each(function(index, el) {
-					$(this).animateNumber({ number: $(this).data('count'), duration: 2000, }, 1000);
 				});
-			})
+				if(App.table>$(win).width()){
+					$('.statistic').addClass('animated');
+					$('[data-count]').each(function(index, el) {
+						$(this).animateNumber({ number: $(this).data('count'), duration: 2000, }, 1000);
+					});
+				}
+				$(win).on('load', function(){
+					$('.about .statistic, .page_date .statistic').addClass('animated');
+					$('[data-count]').each(function(index, el) {
+						$(this).animateNumber({ number: $(this).data('count'), duration: 2000, }, 1000);
+					});
+				})
+			}
 		},
 		initMap: function(){
 			//MAP START
@@ -550,6 +606,30 @@
 						center: {lat: 55.0060833, lng: 82.9226662},
 						styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]
 					});
+				 
+					var input = document.getElementById('search_city');
+
+					var autocomplete = new google.maps.places.Autocomplete((input), {
+						types: ['(cities)'],
+						address: ['Волгоград','Москва'],
+						componentRestrictions: {'country': 'ru'}
+					});
+				 
+					autocomplete.addListener('place_changed', function() {
+						var place = autocomplete.getPlace();
+						if (!place.geometry) {
+							return;
+						}
+						if (place.geometry.viewport) {
+							map.fitBounds(place.geometry.viewport);
+						} else {
+							map.setCenter(place.geometry.location);
+							map.setZoom(12);
+						}
+					});
+
+					
+					//map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 					$.getJSON( "js/map_base.json", function( data ) {
 						$.each( data, function( key, val ) {
 							var cordx=val['GEO_LATITUDE'],
@@ -581,6 +661,10 @@
 								});
 								marker.addListener('click', function() {
 									infowindow.open(map, marker);
+
+									map.setZoom(14);
+									map.setCenter(marker.position);
+							 
 									map.setOptions({draggable: false});
 									this.set('label', 
 										{
@@ -593,6 +677,8 @@
 								});
 								google.maps.event.addListener(infowindow,'closeclick',function(){
 									map.setOptions({draggable: true});
+									map.setZoom(12);
+									map.setCenter(marker.position);
 									marker.set('label', 
 										{
 											text: opentime+'-'+closetime,
@@ -800,7 +886,234 @@
 					}
 				});
 			}
-			
+		},
+		initBuyList: function(){
+			if($('.buy_list').length){
+				$('.buy_list .list_items .scroll_wrapper').scrollbar();
+				$('.buy_list .add_category .list').scrollbar();
+				//PANEL EDIT
+				function hexToRgb(hex) {
+					var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+					hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+						return r + r + g + g + b + b;
+					});
+
+					var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+					return result ? {
+						r: parseInt(result[1], 16),
+						g: parseInt(result[2], 16),
+						b: parseInt(result[3], 16)
+					} : null;
+				}
+				var removebtn='<a href="#" class="remove"><svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve" width=""><style type="text/css">.st0{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><line id="XMLID_233_" class="st0" x1="20.5" y1="1.5" x2="1.5" y2="20.5"/><line id="XMLID_313_" class="st0" x1="1.5" y1="1.5" x2="20.5" y2="20.5"/></svg></a>';
+				//ADD CATEGORY
+				function add_category(category_id, color, name, image, type){
+					var  title=name,
+						get_color_rgb=hexToRgb(color),
+						color_rgb=get_color_rgb['r']+','+get_color_rgb['g']+','+get_color_rgb['b'];
+					var option_array=type,
+						option_list='';
+					$.each(option_array,function(key, val ) {
+						option_list+='<option value="'+val+'">'+val+'</option>'
+					});
+					var option='<div class="option"><div class="field select_field"><select name="option_id_'+category_id+'_0" data-select><option data-default="true" value="Тип продукта">Тип продукта</option>'+option_list+'</select></div><div class="field desc_field"><input type="text" placeholder="Описание"></div><div class="field num_field"><input type="text" placeholder="Кол-во"></div><div class="field remove_field">'+removebtn+'</div></div>';
+					var template='<div class="product_item" id="product_id_'+category_id+'" data-product_id="'+category_id+'"><div class="category_title" style="box-shadow: 0 2px 13px rgba('+color_rgb+', 0.35);"><div class="icon"><img src="'+image+'" alt=""><div class="title" style="color:'+color+';">'+title+'</div></div>'+removebtn+'</div><div class="product_options">'+option+'</div></div>';
+					 
+					$('.product_items_list').append(template);
+					$('.product_item select:visible').js_select();
+				}
+				//ADD OPTION
+				function add_option ($this,num, category_id){
+					var type='';
+					$.getJSON( "js/buy_list.json", function( data ) {
+						$.each(data, function( key, val, index ) {
+							if(val['ID']==category_id){
+								type=val['TYPE'];
+							}
+						});
+						//console.log(type)
+						var option_array=type,
+						option_list='';
+						$.each(option_array,function(key, val ) {
+							option_list+='<option value="'+val+'">'+val+'</option>'
+						});
+						option='<div class="option"><div class="field select_field"><select name="option_id_'+category_id+'_'+num+'" data-select><option data-default="true" value="Тип продукта">Тип продукта</option>'+option_list+'</select></div><div class="field desc_field"><input type="text" placeholder="Описание"></div><div class="field num_field"><input type="text" placeholder="Кол-во"></div><div class="field remove_field">'+removebtn+'</div></div>';
+						 
+						$this.parents('.product_options').append(option);
+						$this.parents('.product_options').find('.option:last').find('select').js_select();
+					});
+				}
+				$(doc).on('click', '.product_item .category_title .remove', function(e){
+					e.preventDefault();
+					if (confirm('Вы уверены что хотите удалить это поле?')) {
+						var id=$(this).parents('.product_item').data('product_id');
+						$('.add_category .list li a[data-id='+id+']').parent().removeClass('hide');
+						$(this).parents('.product_item').remove();
+						result_list();
+					}
+				});
+				$(doc).on('click', '.js_select li', function () {
+					var t=$(this),
+						option_lenght=t.parents('.product_options').find('.option').length,
+						options=t.parents('.option');
+					if(!options.next().length){
+						if(t.find('span').text()!='Тип продукта'){
+							add_option(t, option_lenght, t.parents('.product_item').data('product_id'));
+						}
+					}
+					result_list();
+				});
+				$(doc).on('keyup', '.product_item .desc_field input,.product_item .num_field input', function(e){
+					e.preventDefault();
+					if($(this).val()){
+						var t=$(this),
+							option_lenght=t.parents('.product_options').find('.option').length,
+							options=t.parents('.option');
+						if(!options.next().length){
+							add_option(t, option_lenght, t.parents('.product_item').data('product_id'));
+						}
+					}
+					result_list();
+				});
+				$(doc).on('click', '.product_item .product_options .option .remove', function(e){
+					e.preventDefault();
+					var id=$(this).parents('.product_item').data('product_id'),
+					parent=$(this).parents('.product_item'),
+					option_select=$(this).parents('.option').find('select'),
+					option_desc=$(this).parents('.option').find('.desc_field input'),
+					option_num=$(this).parents('.option').find('.num_field input'),
+					option_lenght=$(this).parents('.product_options').find('.option').length;
+					//console.log($(this).parents('.product_options').find('.option').length)
+					//if (confirm('Are you sure ?')) { }
+
+					if(option_select.val()!='Тип продукта' || option_num.val().length || option_desc.val().length){
+						if (confirm('Вы уверены что хотите удалить это поле?')) {
+							if(option_lenght<=2){
+								$('.add_category .list li a[data-id='+id+']').parent().removeClass('hide');
+								parent.remove();
+								result_list();
+							} else {
+									$(this).parents('.option').remove();
+									result_list();
+							}
+						}
+					}
+					if(!(option_select.val()!='Тип продукта' || option_num.val().length || option_desc.val().length) && $(this).parents('.option').next().length){
+						$(this).parents('.option').remove();
+						result_list();
+					}
+				})
+				$(doc).on('click', '.add_category .list li a', function(e){
+					e.preventDefault();
+					var category_id=$(this).data('id'),
+						t=$(this),
+						chek_has_element=false, i=0;
+					$.getJSON( "/buy-list/js/buy_list.json", function( data ) {
+					  // console.log(data);
+						$.each(data, function( key, val, index ) {
+							i++;
+                          //  console.log(val['TYPE']);
+							if(val['ID']==category_id){
+								add_category(category_id, val['COLOR'], val['NAME'], val['IMAGE'], val['TYPE']);
+								result_list();
+								t.parent().addClass('hide');
+								chek_has_element=true;
+							}
+							if(data.length==i){
+								if(!chek_has_element){
+									alert('К сожелению категории не найдено.')
+								}
+							}
+						});
+					});
+					
+				});
+				//RESULT LIST
+				$(doc).on('click', '#result_list .item .remove', function(e){
+					e.preventDefault();
+					var t=$(this),
+					productid=t.parents('.item').data('product_id'),
+					index=t.parents('.option').data('itemindex');
+					t.parents('.option').remove();
+					$('.product_item#product_id_'+productid+' .option:eq('+index+')').remove();
+				});
+				$(doc).on('click', '#result_list .item .edit', function(e){
+					e.preventDefault();
+					var t=$(this),
+					productid=t.parents('.item').data('product_id'),
+					index=t.parents('.option').data('itemindex');
+					 
+					$('.product_item#product_id_'+productid+' .option:eq('+index+') .desc_field input').focus();
+				});
+				$(doc).on('click', '.remove_all', function(e){
+					e.preventDefault();
+					if (confirm('Вы уверены что хотите удалить все поля?')) {
+						length=$('.product_items_list .product_item').length;
+						$('.product_items_list .product_item').each(function(index, el) {
+							$(this).find('.option:not(:last)').remove()
+							if(length==(parseInt(index+1))){
+								result_list();
+							}
+						});
+					}
+				});
+				$(doc).on('click', '.save_all', function(e){
+					e.preventDefault();
+					json_object={};
+					json_array=[];
+					length=$('.product_items_list .product_item').length;
+					$('.product_items_list .product_item').each(function(index, el) {
+						json_option_object={};
+						$(this).find('.option:not(:last)').each(function(index, el) {
+							//console.log($(this).find('select').val())
+							json_option_object[index]={
+								name: $(this).find('select').val(),
+								desc: $(this).find('.desc_field input').val(),
+								num_field: $(this).find('.desc_field input').val()
+							}
+						});
+						json_object={
+							category_id:$(this).data('product_id'),
+							products:json_option_object
+							
+						}
+						json_array.push(json_object);
+						if(length==(parseInt(index+1))){
+						  //console.log(json_array);
+							//ВОТ ТУТ ПОПРАВИТЬ КУДА ТЕБЕ ОТПРАВЛЯТЬ И КАК ПОЛУЧАТЬ ОТВЕТ
+							$.ajax({
+							    type: "POST",
+								url: 'js/addNewUserList.php',
+								data: {products:JSON.stringify(json_array)},
+								success: function(msg){
+									alert('Готово');
+									console.log(msg);
+								}
+							});
+						}
+					});
+					
+				});
+				function result_list(){
+					$html='';
+					editbtn='<a class="edit" href="#"><svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38.9 38.7" style="enable-background:new 0 0 38.9 38.7;" xml:space="preserve"><path d="M24.2,6.5l7.9,7.9l-20,20l-7.9-7.9L24.2,6.5z M38.1,4.5L34.6,1c-1.4-1.4-3.6-1.4-4.9,0l-3.4,3.4l7.9,7.9l3.9-3.9 C39.1,7.3,39.1,5.6,38.1,4.5L38.1,4.5z M0,37.6c-0.1,0.6,0.4,1.2,1.1,1.1l8.8-2.1L2,28.6L0,37.6z M0,37.6"/></svg></a>'
+					$('.product_items_list .product_item').each(function(index, el) {
+						var t=$(this),
+							$option_list='',
+							title=t.find('.category_title').find('.title').html(),
+							color=t.find('.category_title').find('.title').css('color');
+							t.find('.option').each(function(index, el) {
+								select_val=$(this).find('select').val();
+								if(select_val!='Тип продукта'){
+									$option_list+='<div class="option" data-itemindex="'+index+'"><div class="name"><div class="before"  style="background:'+color+'"></div><span>'+select_val+'</span><span>'+$(this).find('.desc_field input').val()+' '+$(this).find('.num_field input').val()+'</span></div><div class="controls">'+editbtn+removebtn+'</div></div>';
+								}
+								
+							});
+							$html+='<div class="item" data-product_id="'+t.data('product_id')+'"><div class="item_title" style="color:'+color+'">'+title+'</div>'+$option_list+'</div>';
+					});
+					$('#result_list').html($html);
+				}
+			}
 		},
 		initPlayer: function(){
 			if($('.player').length){
@@ -823,6 +1136,7 @@
 			App.initNumber();
 			App.initMap();
 			App.initSVG();
+			App.initBuyList();
 			App.initCatalog();
 			App.initPlayer();
 		}

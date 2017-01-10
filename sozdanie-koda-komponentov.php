@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Создание кода компонентов");
-?><?$APPLICATION->IncludeComponent("bitrix:news.list", "recipes-main", Array(
+?><?$APPLICATION->IncludeComponent("bitrix:news.list", "reviews-agences", Array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
 		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
 		"AJAX_MODE" => "N",	// Включить режим AJAX

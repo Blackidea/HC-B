@@ -62,7 +62,7 @@ array_push($arrFilter2 , $arrFilter);
 </div>
 <!-- close container -->
 <section class="recepts recepts_list">
-			<h2>Рецепты</h2>
+			<h2><?echo $APPLICATION->GetTitle();?></h2>
 			<div class="filter_recepts">
 				<div class="container">
 					<div class="row">

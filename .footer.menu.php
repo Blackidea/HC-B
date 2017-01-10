@@ -9,7 +9,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Отзывы сотрудников", 
-		"reviews/", 
+		"reviews-employee", 
 		Array(), 
 		Array(), 
 		"" 

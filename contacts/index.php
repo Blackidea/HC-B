@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Контакты");
 <!-- CONTACT -->
 		<section class="contacts">
 			<div class="container-fluid">
-				<h2>Контакты</h2>
+				<h2><?echo $APPLICATION->GetTitle();?></h2>
 				<div class="row">
 					<div class="col-sx-12 col-sm-5 col-md-4 nopadding">
 						<div class="contact_container">
