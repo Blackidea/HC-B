@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Создание кода компонентов");
-?><?$APPLICATION->IncludeComponent("bitrix:news.list", "reviews-agences", Array(
+?><?$APPLICATION->IncludeComponent("bitrix:news.list", "catalog-gallery", Array(
 	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
 		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
 		"AJAX_MODE" => "N",	// Включить режим AJAX
@@ -24,13 +24,14 @@ $APPLICATION->SetTitle("Создание кода компонентов");
 		"FIELD_CODE" => array(	// Поля
 			0 => "CODE",
 			1 => "NAME",
-			2 => "PREVIEW_TEXT",
-			3 => "",
+			2 => "PREVIEW_PICTURE",
+			3 => "DETAIL_PICTURE",
+			4 => "",
 		),
 		"FILTER_NAME" => "",	// Фильтр
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
-		"IBLOCK_ID" => "19",	// Код информационного блока
-		"IBLOCK_TYPE" => "recipes",	// Тип информационного блока (используется только для проверки)
+		"IBLOCK_ID" => "25",	// Код информационного блока
+		"IBLOCK_TYPE" => "gallery",	// Тип информационного блока (используется только для проверки)
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",	// Включать инфоблок в цепочку навигации
 		"INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
 		"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
@@ -46,12 +47,13 @@ $APPLICATION->SetTitle("Создание кода компонентов");
 		"PARENT_SECTION_CODE" => "",	// Код раздела
 		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
 		"PROPERTY_CODE" => array(	// Свойства
-			0 => "duration",
-			1 => "ingredients",
-			2 => "category",
-			3 => "type",
-			4 => "hardship",
+			0 => "",
+			1 => "",
+			2 => "",
+			3 => "",
+			4 => "",
 			5 => "",
+			6 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",	// Устанавливать заголовок окна браузера
 		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы

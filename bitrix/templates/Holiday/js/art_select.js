@@ -44,6 +44,7 @@
 					}
 					$parent_selected.find('.js_selected span').html($t.html());
 					$('select[name="' + $t.parents('.js_select').data('select-name') + '"] option').removeAttr('selected');
+					$('select[name="' + $t.parents('.js_select').data('select-name') + '"] option').val($t.text())
 					$('select[name="' + $t.parents('.js_select').data('select-name') + '"] option[value="' + $t.data('selected') + '"]').attr('selected', 'selected');
 				});
 				$(doc).on('click', '.js_selected', function () {

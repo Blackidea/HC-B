@@ -32,16 +32,26 @@ $vacanciesCount = count($arResult["ITEMS"]);
 //echo "</pre>";
 
 
-    $hlArray = holiday::getHload($arItem['PROPERTIES']['city']['USER_TYPE_SETTINGS']['TABLE_NAME']);
+    $hlArrayCity = holiday::getHload($arItem['PROPERTIES']['city']['USER_TYPE_SETTINGS']['TABLE_NAME']);
     //print_r($hlArray);
-    $data = holiday::getHloadDataByXmlId($hlArray, $arItem['PROPERTIES']['city']['VALUE']);
+    $dataCity = holiday::getHloadDataByXmlId($hlArrayCity, $arItem['PROPERTIES']['city']['VALUE']);
     //print_r($data);
-    
+     $hlArrayShop = holiday::getHload($arItem['PROPERTIES']['shop']['USER_TYPE_SETTINGS']['TABLE_NAME']);
+    //print_r($hlArray);
+    $dataShop = holiday::getHloadDataByXmlId($hlArrayShop, $arItem['PROPERTIES']['shop']['VALUE']);
+    //print_r($dataShop);
 
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
+<?
+$fileId  = $dataShop[0]['UF_FILE'];
+//$fileId = strval($fileId);
 
+
+?>
+<?
+//CFile::GetByID($dataShop[0]['UF_FILE']);?>
 <div class="item">
     <div class="container-fluid">
         <div class="row">
@@ -49,10 +59,10 @@ $vacanciesCount = count($arResult["ITEMS"]);
                 <div class="title"><a href="<?=$arItem["DETAIL_PAGE_URL"]?> "><?echo $arItem["NAME"]?></a></div>
                 <div class="price"><?=$arItem['PROPERTIES']['pay_level_text']['VALUE'];?></div>
                 <div class="desc"><?echo $arItem["PREVIEW_TEXT"]?></div>
-                <div class="city"><?= $data[0]['UF_NAME'];?> |<?= FormatDate('j F Y', MakeTimeStamp($arItem['DATE_CREATE']));?>  </div>
+                <div class="city"><?= $dataCity[0]['UF_NAME'];?> |<?= FormatDate('j F Y', MakeTimeStamp($arItem['DATE_CREATE']));?>  </div>
             </div>
             <div class="logo col-md-3">
-                <a href="#"><img src="img/logo.svg" alt=""></a>
+                <a href="#"><img src="<?= CFile::GetPath($fileId)?>" alt="<?=$dataShop[0]['UF_NAME']?>"></a>
             </div>
         </div>
     </div>

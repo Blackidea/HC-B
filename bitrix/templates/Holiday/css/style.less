@@ -1009,7 +1009,12 @@ header{
 	.reviews_list{
 		padding-top: 30px;
 		padding-bottom: 15px;
-		
+		.item_review{
+			transition:all 0.5s;
+			&:hover{
+				box-shadow: 0 15px 33px rgba(0, 0, 0, 0.3);
+			}
+		}
 	}
 }
 .item_review{
@@ -2017,6 +2022,9 @@ footer{
 			line-height: 20px;
 			margin-bottom: 20px;
 		}
+		.share_list{
+			justify-content: center;
+		}
 	}
 }
 .discounts_list{
@@ -2062,8 +2070,8 @@ footer{
 		border:1px solid black;
 		border-radius: 4px;
 		margin-bottom: 8px;
-		margin-left: 3px;
-		margin-right: 3px;
+		margin-left: 2px;
+		margin-right: 2px;
 		padding-left: 6px;
 		padding-right: 8px;
 		transition: 0.3s all;
@@ -2523,8 +2531,7 @@ footer{
 		display: inline-block;
 		vertical-align: top;
 		svg{
-			display: inline-block;
-			vertical-align: middle;
+			float: left;
 			width: 28px;
 			height: 28px;
 			margin-right: 15px;
@@ -2536,6 +2543,10 @@ footer{
 			.hover{
 				display: none;
 			}
+		}
+		span{
+			float: left;
+			padding-top:6px;
 		}
 		&:hover{
 			color: @color_red;
@@ -2649,6 +2660,9 @@ footer{
 		}
 		.share_links{
 			text-align: center;
+			.share_list{
+				justify-content: center;
+			}
 		}
 	}
 }
@@ -2659,6 +2673,32 @@ footer{
 	h2:first-child{
 		margin-top: 0;
 		padding-top: 0;
+	}
+	.pos-r{
+		position: relative;
+	}
+	.popup_banner{
+		display: none;
+		position: absolute;
+		top: 38px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 4;
+		background: rgba(231,56,39,0);
+		background: -moz-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.1) 12%, rgba(255,255,255,0.5) 21%, rgba(255,255,255,0.78) 31%, rgba(255,255,255,1) 39%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(231,56,39,0)), color-stop(10%, rgba(255,255,255,0.08)), color-stop(12%, rgba(255,255,255,0.1)), color-stop(21%, rgba(255,255,255,0.5)), color-stop(31%, rgba(255,255,255,0.78)), color-stop(39%, rgba(255,255,255,1)));
+		background: -webkit-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.1) 12%, rgba(255,255,255,0.5) 21%, rgba(255,255,255,0.78) 31%, rgba(255,255,255,1) 39%);
+		background: -o-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.1) 12%, rgba(255,255,255,0.5) 21%, rgba(255,255,255,0.78) 31%, rgba(255,255,255,1) 39%);
+		background: -ms-linear-gradient(top, rgba(231,56,39,0) 0%, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.1) 12%, rgba(255,255,255,0.5) 21%, rgba(255,255,255,0.78) 31%, rgba(255,255,255,1) 39%);
+		background: linear-gradient(to bottom, rgba(231,56,39,0) 0%, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.1) 12%, rgba(255,255,255,0.5) 21%, rgba(255,255,255,0.78) 31%, rgba(255,255,255,1) 39%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e73827', endColorstr='#ffffff', GradientType=0 );
+		img{
+			width: 100%;
+			height: auto;
+			border-radius: 3px;
+			box-shadow: 0 0 17px rgba(0, 0, 0, 0.15);
+		}
 	}
 	.show_repect_filter{
 		width: 80%;
@@ -2975,6 +3015,15 @@ footer{
 		overflow: hidden;
 		margin-top: 25px;
 		padding-top: 0;
+		.share_tabs{
+			justify-content: center;
+		}
+		.title{
+			text-align: center;
+		}
+		.share_list{
+			justify-content: center;
+		}
 	}
 	
 	.recepts{
@@ -3023,7 +3072,7 @@ footer{
 		border-radius: 3px 0px 3px 3px;
 		box-shadow: 6px 0 15px rgba(0, 0, 0, 0.15);
 		transition:0.5s all;
-		&:hover{
+		&:hover, &.active{
 			box-shadow: 6px 0 20px rgba(0, 0, 0, 0.25);
 			svg{
 				fill:@color_red;
@@ -3156,6 +3205,7 @@ footer{
 					fill: @color_red;
 				}
 			}
+
 			span{
 				margin-bottom: -3px;
 			}
@@ -3177,6 +3227,27 @@ footer{
 	.stores_container{
 		height: 300px;
 		overflow: hidden;
+		.loading{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0px;
+			z-index: 99;
+			background: #fff;
+			span{
+				left: 50%;
+				top: 30px;
+				margin-left: -50px;
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: url(../img/loading.gif) no-repeat;
+				background-size: cover;
+			}
+		}
+		position: relative;
+
 	}
 	.stores_map{
 		height: 300px;
@@ -3623,6 +3694,10 @@ footer{
 		text-align: center;
 		padding-bottom: 25px;
 		font-family: 'Rubik';
+		transition:all 0.5s;
+		&:hover{
+			box-shadow: 0 15px 33px rgba(0, 0, 0, 0.3);
+		}
 		.image{
 			display: block;
 			height: 300px;
@@ -3935,6 +4010,9 @@ footer{
 			}
 		}
 	}
+	.pos_releative{
+		position: relative;
+	}
 	.list_items{
 		padding-left: 15px;
 		padding-right: 15px;
@@ -3942,6 +4020,11 @@ footer{
 		border-radius: 3px;
 		box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 		overflow: hidden;
+		&.fixed{
+
+			margin-right: 15px;
+			position: absolute;
+		}
 		.title{
 			padding-top: 25px;
 			padding-bottom: 25px;
@@ -4093,6 +4176,7 @@ footer{
 			a{
 				width: 100%;
 				box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+
 				&:hover{
 					box-shadow: 6px 0 20px rgba(0, 0, 0, 0.25);
 				}

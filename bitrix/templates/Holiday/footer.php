@@ -391,11 +391,9 @@ if($page!="/"):?>
 				</div>
 			</div>
 		</div>
-		<div class="shadow_site"></div>
-		Всплывающие окна:
-		<a data-showpopup="#popup_login" href="#">Войти</a>
-		<a data-showpopup="#popup_registration" href="#">Регистрация</a>
-		<a data-showpopup="#popup_registration_step" href="#">Регистрация 2</a>
+		
+		
+		
 		<!-- UP BUTTON -->
 		<div class="button_up">
 			<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -409,7 +407,8 @@ if($page!="/"):?>
 		</div>
 		
         
-		<script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyC6vGWo8E_DBTS4D8CXkZCdyk068s8nUDU"></script> 
+		<script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyC6vGWo8E_DBTS4D8CXkZCdyk068s8nUDU&libraries=places"></script> 
+        
 		<script src="<?=$APPLICATION->GetTemplatePath("js/jquery.ba-outside-events.js")?>"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -418,9 +417,12 @@ if($page!="/"):?>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/bootstrap.js")?>"></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/scrollTo.js")?>"></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/slider.js")?>"></script>
+        <script src="<?=$APPLICATION->GetTemplatePath("js/cookies.js")?>"></script>
         <script src="<?=$APPLICATION->GetTemplatePath("js/scrollbar.js")?>"></script>
         <script src="<?=$APPLICATION->GetTemplatePath("js/art_select.js")?>"></script>
 		<script src="<?=$APPLICATION->GetTemplatePath("js/main.js")?>"></script>
+        
+        
         
         <script async src="https://usocial.pro/usocial/usocial.js?v=4.0.0" data-script="usocial" charset="utf-8"></script>
         

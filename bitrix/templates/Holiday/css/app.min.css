@@ -1126,6 +1126,14 @@ header .user_profile:hover svg {
   padding-top: 30px;
   padding-bottom: 15px;
 }
+.reviews_agenstva .reviews_list .item_review {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.reviews_agenstva .reviews_list .item_review:hover {
+  -webkit-box-shadow: 0 15px 33px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 15px 33px rgba(0, 0, 0, 0.3);
+}
 .item_review {
   background-color: white;
   -webkit-border-radius: 3px;
@@ -2257,6 +2265,13 @@ footer .social_buttons .social_list a:hover svg .st1 {
   line-height: 20px;
   margin-bottom: 20px;
 }
+.news_list .item .share_list,
+.discounts_list .item .share_list {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .discounts_list .item .image {
   height: auto;
   max-height: 270px;
@@ -2314,8 +2329,8 @@ footer .social_buttons .social_list a:hover svg .st1 {
   -webkit-border-radius: 4px;
           border-radius: 4px;
   margin-bottom: 8px;
-  margin-left: 3px;
-  margin-right: 3px;
+  margin-left: 2px;
+  margin-right: 2px;
   padding-left: 6px;
   padding-right: 8px;
   -webkit-transition: 0.3s all;
@@ -2823,8 +2838,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
 .recepts_full .all_news svg,
 .vakancy_full .all_news svg,
 .history_full .all_news svg {
-  display: inline-block;
-  vertical-align: middle;
+  float: left;
   width: 28px;
   height: 28px;
   margin-right: 15px;
@@ -2846,6 +2860,14 @@ footer .social_buttons .social_list a:hover svg .st1 {
 .vakancy_full .all_news svg .hover,
 .history_full .all_news svg .hover {
   display: none;
+}
+.news_full .all_news span,
+.discounts_full .all_news span,
+.recepts_full .all_news span,
+.vakancy_full .all_news span,
+.history_full .all_news span {
+  float: left;
+  padding-top: 6px;
 }
 .news_full .all_news:hover,
 .discounts_full .all_news:hover,
@@ -3051,6 +3073,12 @@ footer .social_buttons .social_list a:hover svg .st1 {
 .discounts_full .discounts_content .share_links {
   text-align: center;
 }
+.discounts_full .discounts_content .share_links .share_list {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*========RECEPTS=======*/
 .recepts_list {
   position: static;
@@ -3059,6 +3087,32 @@ footer .social_buttons .social_list a:hover svg .st1 {
 .recepts_list h2:first-child {
   margin-top: 0;
   padding-top: 0;
+}
+.recepts_list .pos-r {
+  position: relative;
+}
+.recepts_list .popup_banner {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: rgba(231, 56, 39, 0);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(231, 56, 39, 0)), color-stop(10%, rgba(255, 255, 255, 0.08)), color-stop(12%, rgba(255, 255, 255, 0.1)), color-stop(21%, rgba(255, 255, 255, 0.5)), color-stop(31%, rgba(255, 255, 255, 0.78)), color-stop(39%, #ffffff));
+  background: -webkit-linear-gradient(top, rgba(231, 56, 39, 0) 0%, rgba(255, 255, 255, 0.08) 10%, rgba(255, 255, 255, 0.1) 12%, rgba(255, 255, 255, 0.5) 21%, rgba(255, 255, 255, 0.78) 31%, #ffffff 39%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(231, 56, 39, 0)), color-stop(10%, rgba(255, 255, 255, 0.08)), color-stop(12%, rgba(255, 255, 255, 0.1)), color-stop(21%, rgba(255, 255, 255, 0.5)), color-stop(31%, rgba(255, 255, 255, 0.78)), color-stop(39%, #ffffff));
+  background: linear-gradient(to bottom, rgba(231, 56, 39, 0) 0%, rgba(255, 255, 255, 0.08) 10%, rgba(255, 255, 255, 0.1) 12%, rgba(255, 255, 255, 0.5) 21%, rgba(255, 255, 255, 0.78) 31%, #ffffff 39%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e73827', endColorstr='#ffffff', GradientType=0);
+}
+.recepts_list .popup_banner img {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-box-shadow: 0 0 17px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 17px rgba(0, 0, 0, 0.15);
 }
 .recepts_list .show_repect_filter {
   width: 80%;
@@ -3387,6 +3441,21 @@ footer .social_buttons .social_list a:hover svg .st1 {
   margin-top: 25px;
   padding-top: 0;
 }
+.recepts_full .share_links .share_tabs {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.recepts_full .share_links .title {
+  text-align: center;
+}
+.recepts_full .share_links .share_list {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .recepts_full .recepts {
   padding-top: 0;
 }
@@ -3460,14 +3529,17 @@ footer .social_buttons .social_list a:hover svg .st1 {
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
-.share_tabs a:hover {
+.share_tabs a:hover,
+.share_tabs a.active {
   -webkit-box-shadow: 6px 0 20px rgba(0, 0, 0, 0.25);
           box-shadow: 6px 0 20px rgba(0, 0, 0, 0.25);
 }
-.share_tabs a:hover svg {
+.share_tabs a:hover svg,
+.share_tabs a.active svg {
   fill: #68170f;
 }
-.share_tabs a:hover svg .st0 {
+.share_tabs a:hover svg .st0,
+.share_tabs a.active svg .st0 {
   fill: #68170f;
   stroke: #68170f;
 }
@@ -3630,6 +3702,26 @@ footer .social_buttons .social_list a:hover svg .st1 {
 .get_stores .stores_container {
   height: 300px;
   overflow: hidden;
+  position: relative;
+}
+.get_stores .stores_container .loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 99;
+  background: #fff;
+}
+.get_stores .stores_container .loading span {
+  left: 50%;
+  top: 30px;
+  margin-left: -50px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: url(../img/loading.gif) no-repeat;
+  background-size: cover;
 }
 .get_stores .stores_map {
   height: 300px;
@@ -4084,6 +4176,12 @@ footer .social_buttons .social_list a:hover svg .st1 {
   text-align: center;
   padding-bottom: 25px;
   font-family: 'Rubik';
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.history_list .item:hover {
+  -webkit-box-shadow: 0 15px 33px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 15px 33px rgba(0, 0, 0, 0.3);
 }
 .history_list .item .image {
   display: block;
@@ -4441,6 +4539,9 @@ footer .social_buttons .social_list a:hover svg .st1 {
 .buy_list .add_category ul.list li a:hover:before {
   color: #68170f;
 }
+.buy_list .pos_releative {
+  position: relative;
+}
 .buy_list .list_items {
   padding-left: 15px;
   padding-right: 15px;
@@ -4450,6 +4551,10 @@ footer .social_buttons .social_list a:hover svg .st1 {
   -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
           box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+}
+.buy_list .list_items.fixed {
+  margin-right: 15px;
+  position: absolute;
 }
 .buy_list .list_items .title {
   padding-top: 25px;
@@ -4739,6 +4844,18 @@ footer .social_buttons .social_list a:hover svg .st1 {
     line-height: 42px;
     padding-top: 30px;
     padding-bottom: 39px;
+  }
+  .news_list .item .share_list,
+  .discounts_list .item .share_list {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .news_list .item .share_list a,
+  .discounts_list .item .share_list a {
+    margin-right: 4px;
+    margin-left: 4px;
   }
   header {
     height: auto;
@@ -5289,6 +5406,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
     height: 563px;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    background: #108408;
   }
   .get_stores .stores_list li {
     background: #108408;
@@ -5302,6 +5420,9 @@ footer .social_buttons .social_list a:hover svg .st1 {
     min-height: 267px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+  .get_stores .stores_list li.message {
+    text-align: center;
   }
   .get_stores .stores_list li:after {
     content: '';
@@ -5378,9 +5499,6 @@ footer .social_buttons .social_list a:hover svg .st1 {
     font-size: 14px;
     color: #fff;
     margin-bottom: 15px;
-  }
-  .get_stores .stores_list li:nth-child(odd) {
-    background: #198c11;
   }
   .get_stores .stores_list li.active {
     position: relative;
@@ -5699,6 +5817,7 @@ footer .social_buttons .social_list a:hover svg .st1 {
   .recepts_list .dropdown_filter {
     display: block;
     position: relative;
+    overflow: visible;
   }
   .recepts_list .filter_recepts .chekbox_list {
     border: 0;
@@ -5724,6 +5843,21 @@ footer .social_buttons .social_list a:hover svg .st1 {
   }
 }
 @media (min-width: 992px) {
+  .recepts_full .share_links .share_tabs {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .recepts_full .share_links .title {
+    text-align: left;
+  }
+  .recepts_full .share_links .share_list {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   .feedback .feedback_container {
     max-width: 810px;
   }

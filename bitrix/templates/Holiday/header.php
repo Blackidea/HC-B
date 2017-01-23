@@ -50,6 +50,7 @@
 							<span>Новосибирск</span>
 						</a>
 						<div class="user_autorization">
+                        <?if($USER->IsAuthorized()){?>
 							<a href="#" class="user_profile" data-showpopup="#popup_login">
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									viewBox="347 85 265.9 365.3" xml:space="preserve">
@@ -67,7 +68,19 @@
 								</svg>
 								<span>Личный кабинет</span>
 							</a>
-							<a href="#">Выход</a>
+                        <?}
+                        else{?>
+                            <a data-showpopup="#popup_registration" href="#">Регистрация</a>
+		                    <!--<a data-showpopup="#popup_registration_step" href="#">Регистрация 2</a>-->
+                        <?}?>
+                        <?
+                        if (!$USER->IsAuthorized()){?>
+                            <a data-showpopup="#popup_login" href="#">Войти</a>
+                        <?}
+                        else{?>
+                            <a href="#">Выход</a>
+                        <?}?>
+							
 						</div>
 					</div>
 					<!-- START MOBILE -->

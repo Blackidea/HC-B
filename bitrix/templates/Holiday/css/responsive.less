@@ -16,6 +16,17 @@
 		padding-top: 30px;
 		padding-bottom: 39px;
 	}
+	.news_list, .discounts_list{
+		.item{
+			.share_list{
+				justify-content: flex-start;
+				a{
+					margin-right: 4px;
+					margin-left: 4px;
+				}
+			}
+		}
+	}
 	header{
 		height: auto;
 		margin-bottom: 0;
@@ -541,6 +552,7 @@
 			overflow: hidden;
 			height: 563px;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+			background: #108408;
 			li{
 				background: #108408;
 				font-size: 16px;
@@ -553,6 +565,9 @@
 				min-height: 267px;
 				padding-left: 30px;
 				padding-right: 30px;
+				&.message{
+					text-align: center;
+				}
 				&:after{
 					content: '';
 					width: 0px;
@@ -612,10 +627,6 @@
 					font-size: 14px;
 					color: #fff;
 					margin-bottom: 15px;
-				}
-				
-				&:nth-child(odd){
-					background: #198c11;
 				}
 				&.active{
 					position: relative;
@@ -941,6 +952,7 @@
 		.dropdown_filter{
 			display: block;
 			position: relative;
+			overflow: visible;
 		}
 		.filter_recepts{
 			.chekbox_list{
@@ -964,6 +976,19 @@
 	}
 }
 @media (min-width: 992px) {
+	.recepts_full{
+		.share_links{
+			.share_tabs{
+				justify-content: flex-end;
+			}
+			.title{
+				text-align: left;
+			}
+			.share_list{
+				justify-content: flex-start;
+			}
+		}
+	}
 	.feedback{
 		.feedback_container{
 			max-width: 810px;

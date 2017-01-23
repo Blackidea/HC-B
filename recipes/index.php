@@ -58,6 +58,12 @@ array_push($arrFilter2 , $arrFilter);
 //print_r($categories);
 //echo "</pre>";
 ?>
+<script>
+
+    function setRatio(param){
+        $('input[name="uroven"]').val(param);
+    }
+</script>
 <!-- close container -->
 </div>
 <!-- close container -->
@@ -83,9 +89,10 @@ array_push($arrFilter2 , $arrFilter);
     						</div>
     						<div class="col-md-3">
     							<div class="title">Сложность</div>
-                                <input type="hidden" name="uroven" value="3"/>
+                                
     							<div class="check_ratio">
-    								<a class="active" href="#">
+                                    <input type="hidden" name="uroven" value="1"/>
+    								<a class="active" href="#" onclick="setRatio(1);">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -103,7 +110,7 @@ array_push($arrFilter2 , $arrFilter);
     										</svg>
     									</span>
     								</a>
-    								<a href="#">
+    								<a href="#" onclick="setRatio(2);">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -137,7 +144,7 @@ array_push($arrFilter2 , $arrFilter);
     										</svg>
     									</span>
     								</a>
-    								<a href="#">
+    								<a href="#" onclick="setRatio(3);">
     									<span>
     										<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     											 viewBox="360.9 161 236.2 208.6" xml:space="preserve">
@@ -201,16 +208,26 @@ array_push($arrFilter2 , $arrFilter);
     							
     							</select>
     						</div>
+                            <?
+                            $timeMax = $_GET['time_max'];
+                            if($_GET['time_max']==""){
+                                $timeMax = max($durations);
+                            }
+                            $timeMin = $_GET['time_min'];
+                            if($_GET['time_min']==""){
+                                $timeMin = min($durations);
+                            }?>
     						<div class="col-md-3">
     							<div class="title">Время приготовления</div>
     							<div class="slider_time">
+                                    <input type="hidden" name="time_max" id="max_val" value="<?=$timeMax;?>"/>
+                                    <input type="hidden" name="time_min" id="min_val" value="<?=$timeMin;?>"/>
     								<div class="slider_range"></div>
     								<span class="slider_range_min pull-left"> <i><?echo min($durations);?></i> мин.</span>
     								<span class="slider_range_max pull-right"><i><?echo max($durations);?></i> мин.</span>
     								<div class="clear"></div>
     							</div>
-                                <input type="hidden" name="time_max" value="<?=max($durations);?>"/>
-                                <input type="hidden" name="time_min" value="<?=min($durations);?>"/>
+                                
                                 
     							<input type="submit" value="Подобрать">
     						</div>
