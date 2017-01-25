@@ -3738,6 +3738,110 @@ footer .social_buttons .social_list a:hover svg .st1 {
   border-radius: 0 3px 3px 0 ;
   width: 245px;
 }
+.store_full .go_back {
+  color: #108408;
+  text-decoration: none;
+  font-family: 'Rubik';
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 35px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1px;
+}
+.store_full .go_back svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  margin-top: -1px;
+  transform: rotate(180deg);
+}
+.store_full .go_back svg .st0 {
+  fill: #108408;
+  stroke: none;
+}
+.store_full .go_back svg .hover {
+  display: none;
+}
+.store_full .go_back:hover {
+  color: #68170f;
+}
+.store_full .go_back:hover svg .st0 {
+  display: none;
+}
+.store_full .go_back:hover svg .hover {
+  display: block;
+}
+.store_full .go_back:hover svg .hover .st1 {
+  fill: #68170f;
+  stroke: none;
+}
+.store_full .store_info .image {
+  margin-bottom: 30px;
+}
+.store_full .store_info .image img {
+  width: 100%;
+  height: auto;
+}
+.store_full .store_info .store_fields {
+  border-bottom: 1px #f5dddb solid;
+}
+.store_full .store_info .store_fields .field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.store_full .store_info .store_fields .field .icon {
+  margin-right: 15px;
+}
+.store_full .store_info .store_fields .field .icon.map_icon svg {
+  width: 27px;
+  height: 34px;
+  fill: #68170f;
+}
+.store_full .store_info .store_fields .field .icon.phone svg {
+  width: 28px;
+  height: 29px;
+  fill: #68170f;
+}
+.store_full .store_info .store_fields .field .icon.clock svg {
+  width: 28px;
+  height: 29px;
+  fill: #68170f;
+}
+.store_full .store_info .store_fields .field .text {
+  line-height: 24px;
+  color: #333;
+  font-family: 'Rubik';
+  font-size: 16px;
+  font-weight: 400;
+}
+.store_full .tags_list {
+  padding-top: 20px;
+}
+.store_full .tags_list .tag {
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  padding-right: 15px;
+}
+.store_full .tags_list .tag .icon {
+  margin-right: 8px;
+}
+.store_full .tags_list .tag .icon svg {
+  fill: #68170f;
+}
+.store_full .tags_list .tag .text {
+  color: black;
+  font-family: 'Rubik';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
 /*========BUY LIST=======*/
 .buy_list {
   padding-bottom: 100px;
@@ -4213,6 +4317,13 @@ footer .social_buttons .social_list a:hover svg .st1 {
   top: -12px;
 }
 @media (min-width: 768px) {
+  .store_full .tags_list {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .store_full .tags_list .tag {
+    width: 49%;
+  }
   h2 {
     font-size: 40px;
     line-height: 42px;
